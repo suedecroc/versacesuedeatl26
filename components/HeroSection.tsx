@@ -1,5 +1,4 @@
 import MotionWrapper from "./MotionWrapper";
-import StickerButton from "./StickerButton";
 
 export default function HeroSection() {
   return (
@@ -28,23 +27,8 @@ export default function HeroSection() {
 
         <MotionWrapper delay={400}>
           <p className="font-[family-name:var(--font-body)] text-cream/60 text-base sm:text-lg mt-8 max-w-lg mx-auto leading-relaxed">
-            [TAGLINE]
+            east side energy. magic city nights. lemon pepper theology.
           </p>
-        </MotionWrapper>
-
-        {/* 3 floating sticker CTAs */}
-        <MotionWrapper delay={600}>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div className="float-animation">
-              <StickerButton label="EAT" href="#food" color="pink" className="rotate-chaos-1" />
-            </div>
-            <div className="float-animation-delay-1">
-              <StickerButton label="PARTY" href="#nightlife" color="orange" className="rotate-chaos-2" />
-            </div>
-            <div className="float-animation-delay-2">
-              <StickerButton label="EXPLORE" href="#daytime" color="yellow" className="rotate-chaos-3" />
-            </div>
-          </div>
         </MotionWrapper>
       </div>
 

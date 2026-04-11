@@ -6,7 +6,7 @@ export default function FooterFrame() {
       <div className="max-w-3xl mx-auto text-center relative z-10">
         <MotionWrapper>
           <p className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl text-neon-pink/60 neon-glow-pink uppercase tracking-wide mb-8">
-            [STRONG CLOSING LINE]
+            controlled heat. intentional chaos. always on purpose.
           </p>
         </MotionWrapper>
 

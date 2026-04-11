@@ -1,18 +1,21 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const chapters = [
-  { id: "food", label: "FOOD" },
-  { id: "nightlife", label: "NIGHT" },
-  { id: "daytime", label: "DAY" },
-  { id: "the-plan", label: "THE PLAN" },
-  { id: "areas", label: "SPOTS" },
+  { href: "/", label: "HOME" },
+  { href: "/day", label: "DAY" },
+  { href: "/golden-hour", label: "GOLDEN HOUR" },
+  { href: "/nightlife", label: "NIGHTLIFE" },
+  { href: "/after-hours", label: "AFTER HOURS" },
 ];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -31,14 +34,6 @@ export default function Nav() {
     };
   }, [open]);
 
-  const handleClick = (id: string) => {
-    setOpen(false);
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <>
       <nav
@@ -50,27 +45,27 @@ export default function Nav() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
+            <Link
+              href="/"
               className="font-[family-name:var(--font-display)] text-neon-pink text-xl sm:text-2xl tracking-wider neon-glow-pink"
             >
               VS ATL
-            </a>
+            </Link>
 
             {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-6 lg:gap-8">
               {chapters.map((ch) => (
-                <button
-                  key={ch.id}
-                  onClick={() => handleClick(ch.id)}
-                  className="font-[family-name:var(--font-heading)] text-cream/70 hover:text-neon-pink text-xs tracking-[0.15em] transition-colors uppercase"
+                <Link
+                  key={ch.href}
+                  href={ch.href}
+                  className={`font-[family-name:var(--font-heading)] text-xs tracking-[0.15em] transition-colors uppercase ${
+                    pathname === ch.href
+                      ? "text-neon-pink neon-glow-subtle"
+                      : "text-cream/70 hover:text-neon-pink"
+                  }`}
                 >
                   {ch.label}
-                </button>
+                </Link>
               ))}
             </div>
 
@@ -105,13 +100,18 @@ export default function Nav() {
         <div className="fixed inset-0 z-40 bg-midnight/98 grain flex flex-col items-center justify-center gap-8">
           <div className="relative z-10 flex flex-col items-center gap-8">
             {chapters.map((ch) => (
-              <button
-                key={ch.id}
-                onClick={() => handleClick(ch.id)}
-                className="font-[family-name:var(--font-display)] text-cream text-4xl tracking-wide hover:text-neon-pink transition-colors"
+              <Link
+                key={ch.href}
+                href={ch.href}
+                onClick={() => setOpen(false)}
+                className={`font-[family-name:var(--font-display)] text-4xl tracking-wide transition-colors ${
+                  pathname === ch.href
+                    ? "text-neon-pink neon-glow-pink"
+                    : "text-cream hover:text-neon-pink"
+                }`}
               >
                 {ch.label}
-              </button>
+              </Link>
             ))}
           </div>
         </div>
