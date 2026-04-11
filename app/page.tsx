@@ -140,13 +140,21 @@ export default function Home() {
 
       {/* ===== SEPIA LAUGH PHOTO ===== */}
       <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 pb-8">
-        <div className="max-w-7xl mx-auto">
-          <PhotoCard
-            src="/photos/jordan-sepia-laugh.jpg"
-            alt="Jordan laughing -- sepia film grain"
-            variant="inline"
-            caption="the energy we're bringing"
-          />
+        <div className="max-w-xl mx-auto">
+          <figure className="my-8 lg:my-12">
+            <div className="relative overflow-hidden rounded-lg border border-cream/10 hover:border-cream/25 transition-all duration-500 hover:shadow-[0_0_20px_rgba(255,45,123,0.1)]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/photos/jordan-sepia-laugh.jpg"
+                alt="Jordan laughing -- sepia film grain"
+                loading="lazy"
+                className="w-full h-auto block"
+              />
+            </div>
+            <figcaption className="font-[family-name:var(--font-heading)] text-cream/30 text-xs tracking-wide mt-3 text-center">
+              the energy we bringing
+            </figcaption>
+          </figure>
         </div>
       </section>
 
