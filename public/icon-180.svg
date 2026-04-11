@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <!-- Background -->
+  <rect width="180" height="180" rx="36" fill="#0d0d0d"/>
+
+  <!-- Subtle glow -->
+  <radialGradient id="glow180" cx="50%" cy="52%" r="38%">
+    <stop offset="0%" stop-color="#ff2d7b" stop-opacity="0.12"/>
+    <stop offset="100%" stop-color="#ff2d7b" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="90" cy="95" r="65" fill="url(#glow180)"/>
+
+  <!-- Simplified falcon silhouette -->
+  <g fill="#c8102e">
+    <!-- Left wing -->
+    <polygon points="90,58 25,108 42,120 58,110 75,98 90,80"/>
+    <!-- Left wing tip -->
+    <polygon points="25,108 18,126 40,122 42,120"/>
+
+    <!-- Right wing -->
+    <polygon points="90,58 155,108 138,120 122,110 105,98 90,80"/>
+    <!-- Right wing tip -->
+    <polygon points="155,108 162,126 140,122 138,120"/>
+
+    <!-- Head/beak -->
+    <polygon points="90,58 102,50 110,58 100,64 94,66"/>
+    <polygon points="110,58 116,54 112,63 100,64"/>
+
+    <!-- Body -->
+    <polygon points="82,80 98,80 96,134 84,134"/>
+
+    <!-- Tail feathers -->
+    <polygon points="84,134 70,148 80,140 84,137"/>
+    <polygon points="88,134 90,152 92,134"/>
+    <polygon points="96,134 110,148 100,140 96,137"/>
+  </g>
+
+  <!-- Drumstick bone - simplified -->
+  <g transform="rotate(-32, 90, 68)">
+    <rect x="48" y="61" width="84" height="14" rx="7" fill="#f5e6d3"/>
+    <!-- Left knob -->
+    <circle cx="48" cy="63" r="10" fill="#f5e6d3"/>
+    <circle cx="48" cy="75" r="10" fill="#f5e6d3"/>
+    <circle cx="41" cy="69" r="7" fill="#f5e6d3"/>
+    <!-- Right knob -->
+    <circle cx="132" cy="63" r="10" fill="#f5e6d3"/>
+    <circle cx="132" cy="75" r="10" fill="#f5e6d3"/>
+    <circle cx="139" cy="69" r="7" fill="#f5e6d3"/>
+    <!-- Meat -->
+    <ellipse cx="90" cy="69" rx="22" ry="10" fill="#d4a843" opacity="0.5"/>
+  </g>
+</svg>

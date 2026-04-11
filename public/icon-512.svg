@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Background: dark rounded square -->
+  <rect width="512" height="512" rx="96" fill="#0d0d0d"/>
+
+  <!-- Subtle neon glow behind the bird -->
+  <radialGradient id="glow" cx="50%" cy="52%" r="35%">
+    <stop offset="0%" stop-color="#ff2d7b" stop-opacity="0.12"/>
+    <stop offset="100%" stop-color="#ff2d7b" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="256" cy="265" r="180" fill="url(#glow)"/>
+
+  <!-- Original geometric falcon silhouette -->
+  <!-- Aggressive angular bird, wings swept into a V, head right -->
+  <!-- NOT the NFL Falcons logo - original geometric design -->
+  <g fill="#c8102e">
+    <!-- Left wing - sharp swept geometry -->
+    <polygon points="256,175 80,310 110,340 145,315 200,280 256,230"/>
+    <!-- Left wing tip - angular extension -->
+    <polygon points="80,310 60,355 105,345 110,340"/>
+    <!-- Left wing accent shard -->
+    <polygon points="110,340 95,370 140,348 145,315"/>
+
+    <!-- Right wing - mirror sharp swept geometry -->
+    <polygon points="256,175 432,310 402,340 367,315 312,280 256,230"/>
+    <!-- Right wing tip -->
+    <polygon points="432,310 452,355 407,345 402,340"/>
+    <!-- Right wing accent shard -->
+    <polygon points="402,340 417,370 372,348 367,315"/>
+
+    <!-- Head/beak - angular, pointing right -->
+    <polygon points="256,175 285,152 305,170 288,185 268,190"/>
+    <!-- Beak tip -->
+    <polygon points="305,170 318,160 310,178 288,185"/>
+
+    <!-- Body - angular kite shape -->
+    <polygon points="235,230 277,230 272,375 240,375"/>
+
+    <!-- Left tail feather -->
+    <polygon points="240,375 205,415 228,395 240,385"/>
+    <!-- Center tail spike -->
+    <polygon points="248,375 256,425 264,375"/>
+    <!-- Right tail feather -->
+    <polygon points="272,375 307,415 284,395 272,385"/>
+  </g>
+
+  <!-- Dark accent lines on bird for depth -->
+  <g fill="#8a0a1e" opacity="0.4">
+    <polygon points="256,200 200,280 220,270 256,215"/>
+    <polygon points="256,200 312,280 292,270 256,215"/>
+  </g>
+
+  <!-- Drumstick bone - diagonal across top, cartoon style -->
+  <g transform="rotate(-32, 256, 195)">
+    <!-- Bone shaft -->
+    <rect x="148" y="182" width="216" height="26" rx="13" fill="#f5e6d3"/>
+
+    <!-- Left knob cluster -->
+    <circle cx="148" cy="178" r="20" fill="#f5e6d3"/>
+    <circle cx="148" cy="208" r="20" fill="#f5e6d3"/>
+    <circle cx="134" cy="195" r="13" fill="#f5e6d3"/>
+
+    <!-- Right knob cluster -->
+    <circle cx="364" cy="178" r="20" fill="#f5e6d3"/>
+    <circle cx="364" cy="208" r="20" fill="#f5e6d3"/>
+    <circle cx="378" cy="195" r="13" fill="#f5e6d3"/>
+
+    <!-- Meat on the bone - golden brown -->
+    <ellipse cx="256" cy="195" rx="55" ry="22" fill="#d4a843" opacity="0.55"/>
+
+    <!-- Bone highlight for dimension -->
+    <rect x="170" y="185" width="172" height="8" rx="4" fill="#fffdf5" opacity="0.25"/>
+  </g>
+
+  <!-- "VS ATL" text at bottom -->
+  <text x="256" y="470" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="40" letter-spacing="8" fill="#f5e6d3" opacity="0.6">VS ATL</text>
+</svg>
