@@ -43,7 +43,7 @@ export default function PhotoCard({
     float:
       "w-full sm:w-72 lg:w-80 max-h-[450px] sm:max-h-[400px] lg:max-h-[450px] sm:float-right sm:ml-6 sm:mb-4",
     chaos:
-      "w-full max-w-lg mx-auto max-h-[500px] sm:max-h-[550px] lg:max-h-[600px] rotate-[1.5deg] hover:rotate-0",
+      "w-full max-w-2xl mx-auto rotate-[1.5deg] hover:rotate-0",
     meme:
       "w-full max-w-md mx-auto max-h-[300px] sm:max-h-[350px] lg:max-h-[400px]",
   };
@@ -68,7 +68,7 @@ export default function PhotoCard({
           loading={priority ? "eager" : "lazy"}
           width={800}
           height={isLandscape ? 450 : 1000}
-          className={`w-full h-full ${objectFit} ${objectPosition}`}
+          className={`w-full ${isLandscape ? "h-full" : ""} ${objectFit} ${objectPosition}`}
           onError={(e) => {
             const target = e.currentTarget;
             target.style.display = "none";
