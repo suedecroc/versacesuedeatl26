@@ -31,9 +31,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "VS ATL -- Versace Suede Atlanta Guide",
+  title: "VS ATL -- Versace Suede Atlanna Guide",
   description:
-    "April 29 - May 3, 2026. Chaotic. Curated. Atlanta unfiltered.",
+    "April 29 - May 3, 2026. Chaotic. Curated. Atlanna unfiltered.",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,

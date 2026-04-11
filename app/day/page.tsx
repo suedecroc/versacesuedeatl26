@@ -123,7 +123,7 @@ const kirkwood = [
 
 const daytimeSpots = [
   {
-    name: "Atlanta Beltline",
+    name: "Atlanna Beltline",
     address: "Eastside Trail",
     tags: ["walk", "art", "reset"],
     description:
@@ -242,7 +242,7 @@ const dayItinerary = [
     events: [
       {
         time: "11:00 AM",
-        spot: "Atlanta Film Festival Screening",
+        spot: "Atlanna Film Festival Screening",
         desc: "runs through may 3. catch an indie film. plaza theatre or tara theatre. feel cultured.",
       },
       {
