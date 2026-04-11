@@ -222,8 +222,9 @@ export default function NightlifePage() {
           <PhotoCard
             src="/photos/versace-tailgate.jpg"
             alt="Versace squatting at the tailgate -- pre-game energy"
-            variant="hero"
+            variant="inline"
             caption="pre-game. activated."
+            priority
           />
         </div>
       </section>

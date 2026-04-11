@@ -191,6 +191,18 @@ export default function GoldenHourPage() {
         </div>
       </section>
 
+      {/* ===== VERSACE BATHROOM FIT ===== */}
+      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
+        <div className="max-w-7xl mx-auto">
+          <PhotoCard
+            src="/photos/versace-bathroom-fit.jpg"
+            alt="Versace bathroom fit -- mirror selfie"
+            variant="inline"
+            caption="fit check: golden hour edition"
+          />
+        </div>
+      </section>
+
       {/* Casey Frey energy reference */}
       <QuoteBlock
         text="the energy is shifting. casey frey running through the parking lot type energy. controlled chaos. beautiful nonsense."
@@ -240,7 +252,7 @@ export default function GoldenHourPage() {
             />
             <MotionWrapper delay={200}>
               <p className="font-[family-name:var(--font-body)] text-cream/40 text-sm text-center max-w-2xl mx-auto leading-relaxed">
-                there are drives in atlanta that matter more than the destination. peachtree street when the lights start coming on. the connector when traffic breaks for exactly one second. the back roads through virginia highland where every house has a porch light and it feels like a movie you've already seen.
+                there are drives in atlanta that matter more than the destination. peachtree street when the lights start coming on. the connector when traffic breaks for exactly one second. the back roads through virginia highland where every house has a porch light and it feels like a movie you&apos;ve already seen.
               </p>
             </MotionWrapper>
           </div>

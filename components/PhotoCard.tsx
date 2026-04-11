@@ -3,8 +3,9 @@
 /**
  * PhotoCard -- personal photo integration for VS ATL
  *
- * NOTE: Add actual image files to public/photos/ before deploying.
- * The component gracefully degrades when images are missing (shows alt text).
+ * Handles portrait photos (selfies, mirror shots) with object-contain
+ * so faces never get cropped. Landscape/wide images use object-cover.
+ * Responsive max-heights keep images from dominating the viewport.
  */
 
 interface PhotoCardProps {
@@ -12,8 +13,11 @@ interface PhotoCardProps {
   alt: string;
   caption?: string;
   overlay?: string;
-  variant?: "hero" | "inline" | "float" | "chaos";
+  variant?: "hero" | "inline" | "float" | "chaos" | "meme";
   className?: string;
+  priority?: boolean;
+  /** Force landscape treatment (object-cover). Default auto-detects from variant. */
+  landscape?: boolean;
 }
 
 export default function PhotoCard({
@@ -23,18 +27,25 @@ export default function PhotoCard({
   overlay,
   variant = "inline",
   className = "",
+  priority = false,
+  landscape = false,
 }: PhotoCardProps) {
   const base =
-    "relative overflow-hidden rounded-sm transition-all duration-500 group";
+    "relative overflow-hidden rounded-lg transition-all duration-500 group";
+
+  // Hero and meme are always landscape/cover. Float and chaos are portrait-first.
+  const isLandscape = landscape || variant === "hero" || variant === "meme";
 
   const variants: Record<string, string> = {
-    hero: "w-full aspect-[16/9] lg:aspect-[21/9]",
+    hero: "w-full max-h-[300px] sm:max-h-[400px] lg:max-h-[450px]",
     inline:
-      "w-full max-w-2xl mx-auto aspect-[4/3]",
+      "w-full max-w-2xl mx-auto max-h-[500px] sm:max-h-[550px] lg:max-h-[600px]",
     float:
-      "w-full sm:w-72 lg:w-80 aspect-[3/4] sm:float-right sm:ml-6 sm:mb-4",
+      "w-full sm:w-72 lg:w-80 max-h-[450px] sm:max-h-[400px] lg:max-h-[450px] sm:float-right sm:ml-6 sm:mb-4",
     chaos:
-      "w-full max-w-lg mx-auto aspect-[4/5] rotate-[1.5deg] hover:rotate-0",
+      "w-full max-w-lg mx-auto max-h-[500px] sm:max-h-[550px] lg:max-h-[600px] rotate-[1.5deg] hover:rotate-0",
+    meme:
+      "w-full max-w-md mx-auto max-h-[300px] sm:max-h-[350px] lg:max-h-[400px]",
   };
 
   const glowBorder =
@@ -42,15 +53,22 @@ export default function PhotoCard({
       ? "border-2 border-neon-pink/30 hover:border-neon-pink/60 hover:shadow-[0_0_30px_rgba(255,45,123,0.25)]"
       : "border border-cream/10 hover:border-cream/25 hover:shadow-[0_0_20px_rgba(255,45,123,0.1)]";
 
+  // Portrait photos: object-contain preserves the full image (no face cropping).
+  // Landscape photos: object-cover fills the frame nicely.
+  const objectFit = isLandscape ? "object-cover" : "object-contain";
+  const objectPosition = isLandscape ? "object-center" : "object-top";
+
   return (
     <figure className={`${className} my-8 lg:my-12`}>
-      <div className={`${base} ${variants[variant]} ${glowBorder}`}>
+      <div className={`${base} ${variants[variant]} ${glowBorder} bg-midnight/40`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={src}
           alt={alt}
-          loading="lazy"
-          className="w-full h-full object-cover"
+          loading={priority ? "eager" : "lazy"}
+          width={800}
+          height={isLandscape ? 450 : 1000}
+          className={`w-full h-full ${objectFit} ${objectPosition}`}
           onError={(e) => {
             const target = e.currentTarget;
             target.style.display = "none";

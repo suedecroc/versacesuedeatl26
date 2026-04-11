@@ -159,6 +159,19 @@ export default function AfterHoursPage() {
         attribution="-- vine, eternal"
       />
 
+      {/* ===== ED BOY MEME BREAK ===== */}
+      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
+        <div className="max-w-7xl mx-auto">
+          <PhotoCard
+            src="/photos/jordan-edboy.jpg"
+            alt="Jordan as Ed Edd n Eddy -- ed boy energy"
+            variant="meme"
+            landscape
+            caption="that's my horse"
+          />
+        </div>
+      </section>
+
       <SectionDivider />
 
       {/* ===== THE CHAOS TIMELINE ===== */}
@@ -216,7 +229,7 @@ export default function AfterHoursPage() {
             />
             <MotionWrapper delay={200}>
               <p className="font-[family-name:var(--font-body)] text-cream/30 text-sm text-center max-w-2xl mx-auto leading-relaxed">
-                the after hours chapter is not about destinations. it's about what happens when the plan dissolves. the parking lot conversations. the uber ride confessionals. the hotel lobby at 4AM when you're the only person alive who's not sleeping. future is playing from someone's phone. bass heavy, slow confidence. you're not tired. you're just honest.
+                the after hours chapter is not about destinations. it&apos;s about what happens when the plan dissolves. the parking lot conversations. the uber ride confessionals. the hotel lobby at 4AM when you&apos;re the only person alive who&apos;s not sleeping. future is playing from someone&apos;s phone. bass heavy, slow confidence. you&apos;re not tired. you&apos;re just honest.
               </p>
             </MotionWrapper>
           </div>

@@ -307,6 +307,7 @@ export default function DayPage() {
             alt="Jordan moodboard -- bucket hat edition"
             variant="inline"
             caption="mood: set"
+            priority
           />
         </div>
       </section>

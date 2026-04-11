@@ -125,6 +125,7 @@ export default function Home() {
             alt="Jordan -- y2k cyber angel edit"
             variant="chaos"
             caption="the angel you didn't ask for"
+            priority
           />
         </div>
       </section>
