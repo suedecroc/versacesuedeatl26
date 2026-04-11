@@ -10,6 +10,7 @@ import FooterFrame from "@/components/FooterFrame";
 import MotionWrapper from "@/components/MotionWrapper";
 import StickerButton from "@/components/StickerButton";
 import ChapterNav from "@/components/ChapterNav";
+import PhotoCard from "@/components/PhotoCard";
 
 /* =====================================================================
    DATA
@@ -215,6 +216,18 @@ export default function NightlifePage() {
         </div>
       </AmbientMediaLayer>
 
+      {/* ===== VERSACE TAILGATE -- pre-game energy ===== */}
+      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
+        <div className="max-w-7xl mx-auto">
+          <PhotoCard
+            src="/photos/versace-tailgate.jpg"
+            alt="Versace squatting at the tailgate -- pre-game energy"
+            variant="hero"
+            caption="pre-game. activated."
+          />
+        </div>
+      </section>
+
       <QuoteBlock
         text="he's a 10 but he's at magic city on a tuesday"
         attribution="-- tiktok, valid"
@@ -231,8 +244,8 @@ export default function NightlifePage() {
           intro="atlanta's bar district. every door a different universe. start anywhere, end up everywhere. the strip doesn't judge."
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-6xl mx-auto">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-7xl mx-auto">
             <MobileCarousel>
               {edgewoodSpots.map((spot, i) => (
                 <div key={spot.name} className="min-w-[280px] snap-start md:min-w-0">
@@ -255,8 +268,8 @@ export default function NightlifePage() {
           intro="magic city is the non-negotiable. the rest depends on what kind of night you're building. buckhead goes loud. midtown goes louder. you already know which one you're choosing."
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
             {bigNightSpots.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} glow delay={i * 100} tagVariant="glow" />
             ))}
@@ -270,6 +283,19 @@ export default function NightlifePage() {
         </div>
       </section>
 
+      {/* ===== VERSACE NEON SIGN PHOTO ===== */}
+      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
+        <div className="max-w-7xl mx-auto">
+          <PhotoCard
+            src="/photos/versace-neon-sign.jpg"
+            alt="Versace next to BABE YOU LOOK SO COOL neon sign"
+            variant="inline"
+            className="glow-border"
+            caption="babe you look so cool"
+          />
+        </div>
+      </section>
+
       {/* ===== LATE DINNER ===== */}
       <section className="bg-midnight grain">
         <ChapterIntro
@@ -278,8 +304,8 @@ export default function NightlifePage() {
           intro="you're going to need food. before, during, or after. these spots know what time it is."
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             {lateDinnerSpots.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} delay={i * 80} tagVariant="glow" />
             ))}
@@ -302,8 +328,8 @@ export default function NightlifePage() {
           intro="the after-dark itinerary. each night has its own energy. tuesday warms you up. wednesday is magic city. thursday goes deep east side. friday is the crescendo."
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-4xl mx-auto space-y-16">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-5xl mx-auto space-y-16">
             {nightItinerary.map((day, dayIdx) => (
               <MotionWrapper key={day.day}>
                 <div className="border-l-2 border-neon-pink/20 pl-6 sm:pl-8">
@@ -356,7 +382,7 @@ export default function NightlifePage() {
 
       {/* ===== OUTRO QUOTE ===== */}
       <AmbientMediaLayer gradient="pink">
-        <div className="py-20 sm:py-28 px-6">
+        <div className="py-20 sm:py-28 px-6 lg:px-12">
           <QuoteBlock
             text="magic city doesn't need your introduction. you already know."
           />

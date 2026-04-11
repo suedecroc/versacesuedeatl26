@@ -8,6 +8,7 @@ import AmbientMediaLayer from "@/components/AmbientMediaLayer";
 import FloatingCTA from "@/components/FloatingCTA";
 import FooterFrame from "@/components/FooterFrame";
 import MotionWrapper from "@/components/MotionWrapper";
+import PhotoCard from "@/components/PhotoCard";
 
 /* =====================================================================
    CHAPTER CARDS DATA
@@ -116,6 +117,18 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <HeroSection />
 
+      {/* ===== CYBER ANGEL PHOTO ===== */}
+      <section className="bg-midnight grain py-8 sm:py-12 px-6 lg:px-12 xl:px-16">
+        <div className="max-w-7xl mx-auto">
+          <PhotoCard
+            src="/photos/jordan-cyber-angel.jpg"
+            alt="Jordan -- y2k cyber angel edit"
+            variant="chaos"
+            caption="the angel you didn't ask for"
+          />
+        </div>
+      </section>
+
       {/* ===== WHY ATL ===== */}
       <ChapterIntro
         eyebrow="The Mission"
@@ -124,18 +137,30 @@ export default function Home() {
         quote="we came for the culture. stayed for the chaos."
       />
 
+      {/* ===== SEPIA LAUGH PHOTO ===== */}
+      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 pb-8">
+        <div className="max-w-7xl mx-auto">
+          <PhotoCard
+            src="/photos/jordan-sepia-laugh.jpg"
+            alt="Jordan laughing -- sepia film grain"
+            variant="inline"
+            caption="the energy we're bringing"
+          />
+        </div>
+      </section>
+
       <SectionDivider />
 
       {/* ===== CHAPTER CARDS ===== */}
-      <section className="bg-midnight grain py-16 sm:py-24 px-6">
-        <div className="max-w-5xl mx-auto">
+      <section className="bg-midnight grain py-16 sm:py-24 px-6 lg:px-12 xl:px-16">
+        <div className="max-w-7xl mx-auto">
           <MotionWrapper>
             <p className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] text-neon-pink/60 uppercase mb-12 text-center">
               Four Chapters. One City.
             </p>
           </MotionWrapper>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {chapters.map((ch, i) => (
               <MotionWrapper key={ch.href} delay={i * 100}>
                 <Link href={ch.href} className="block group">
@@ -170,8 +195,8 @@ export default function Home() {
 
       {/* ===== CINEMATIC INTERLUDE ===== */}
       <AmbientMediaLayer gradient="pink">
-        <div className="py-20 sm:py-32 px-6">
-          <div className="max-w-5xl mx-auto">
+        <div className="py-20 sm:py-32 px-6 lg:px-12">
+          <div className="max-w-7xl mx-auto">
             <QuoteBlock
               text="atlanta don't do moderation. this itinerary definitely don't either."
             />
@@ -187,8 +212,8 @@ export default function Home() {
           intro="atlanta sprawls. these are the zones that matter. learn the names, trust the vibes, move accordingly."
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {neighborhoods.map((hood, i) => (
               <MotionWrapper key={hood.name} delay={i * 60}>
                 <div className="border border-neon-pink/10 bg-midnight/60 p-6 rounded-sm hover:border-neon-pink/25 transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,45,123,0.06)]">
@@ -210,7 +235,7 @@ export default function Home() {
 
       {/* ===== OUTRO ===== */}
       <AmbientMediaLayer gradient="pink">
-        <div className="py-24 sm:py-32 px-6 text-center">
+        <div className="py-24 sm:py-32 px-6 lg:px-12 text-center">
           <MotionWrapper>
             <p className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl text-neon-pink neon-glow-pink leading-snug max-w-3xl mx-auto uppercase tracking-wide">
               not polished. not sloppy. always on purpose.

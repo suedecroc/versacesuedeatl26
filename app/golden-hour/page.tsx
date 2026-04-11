@@ -8,6 +8,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 import FooterFrame from "@/components/FooterFrame";
 import MotionWrapper from "@/components/MotionWrapper";
 import ChapterNav from "@/components/ChapterNav";
+import PhotoCard from "@/components/PhotoCard";
 
 /* =====================================================================
    DATA
@@ -129,8 +130,8 @@ export default function GoldenHourPage() {
           variant="warm"
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
             {sunsetSpots.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} delay={i * 100} tagVariant="warm" />
             ))}
@@ -138,8 +139,20 @@ export default function GoldenHourPage() {
         </div>
       </section>
 
+      {/* ===== MS PAINT PHOTO ===== */}
+      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
+        <div className="max-w-7xl mx-auto">
+          <PhotoCard
+            src="/photos/jordan-mspaint.jpg"
+            alt="Jordan in MS Paint window edit"
+            variant="inline"
+            caption="nostalgia buffer loading..."
+          />
+        </div>
+      </section>
+
       <AmbientMediaLayer gradient="warm">
-        <div className="py-16 sm:py-24 px-6">
+        <div className="py-16 sm:py-24 px-6 lg:px-12">
           <QuoteBlock
             text="you're driving through midtown and the light hits the glass buildings and for a second the whole city looks like it was designed for exactly this moment"
           />
@@ -157,8 +170,20 @@ export default function GoldenHourPage() {
           variant="warm"
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* ===== VERSACE SUNGLASSES PHOTO ===== */}
+        <div className="px-6 lg:px-12 xl:px-16 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            <PhotoCard
+              src="/photos/versace-sunglasses.jpg"
+              alt="Versace with blue mirror shades at golden hour"
+              variant="float"
+              caption="golden hour approved"
+            />
+          </div>
+        </div>
+
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             {transitionSpots.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} delay={i * 100} tagVariant="warm" />
             ))}
@@ -183,8 +208,8 @@ export default function GoldenHourPage() {
           variant="warm"
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-3xl mx-auto">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-4xl mx-auto">
             {goldenItinerary.map((event, i) => (
               <MotionWrapper key={event.time} delay={i * 80}>
                 <div className="flex gap-4 mb-8 last:mb-0">
@@ -208,7 +233,7 @@ export default function GoldenHourPage() {
 
       {/* ===== DRIVING INTERLUDE ===== */}
       <AmbientMediaLayer gradient="warm">
-        <div className="py-20 sm:py-28 px-6">
+        <div className="py-20 sm:py-28 px-6 lg:px-12">
           <div className="max-w-4xl mx-auto space-y-12">
             <QuoteBlock
               text="the gas station at golden hour. the way the light hits the pump. the way you're standing there and the city sounds different. this is cinematic for no reason."

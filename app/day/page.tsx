@@ -9,6 +9,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 import FooterFrame from "@/components/FooterFrame";
 import MotionWrapper from "@/components/MotionWrapper";
 import ChapterNav from "@/components/ChapterNav";
+import PhotoCard from "@/components/PhotoCard";
 
 /* =====================================================================
    DATA
@@ -298,6 +299,18 @@ export default function DayPage() {
         </div>
       </AmbientMediaLayer>
 
+      {/* ===== MOODBOARD PHOTO ===== */}
+      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
+        <div className="max-w-7xl mx-auto">
+          <PhotoCard
+            src="/photos/jordan-moodboard.jpg"
+            alt="Jordan moodboard -- bucket hat edition"
+            variant="inline"
+            caption="mood: set"
+          />
+        </div>
+      </section>
+
       <QuoteBlock
         text="hi welcome to chili's"
         attribution="-- vine, forever"
@@ -314,8 +327,8 @@ export default function DayPage() {
           variant="warm"
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-6xl mx-auto space-y-16">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-7xl mx-auto space-y-16">
             {/* Inman Park */}
             <div>
               <MotionWrapper>
@@ -335,6 +348,14 @@ export default function DayPage() {
             <QuoteBlock
               text="so you just gonna bring me a birthday gift on my birthday to my birthday party on my birthday with a birthday gift"
               attribution="-- vine classic"
+            />
+
+            {/* ===== CAT FILTER PHOTO -- comic break ===== */}
+            <PhotoCard
+              src="/photos/jordan-cat-filter.jpg"
+              alt="Jordan cat filter selfie outdoors"
+              variant="chaos"
+              caption="intermission"
             />
 
             {/* Krog Street Market */}
@@ -360,12 +381,20 @@ export default function DayPage() {
                   Kirkwood
                 </h3>
               </MotionWrapper>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {kirkwood.map((spot, i) => (
                   <PlaceCard key={spot.name} {...spot} delay={i * 80} tagVariant="warm" />
                 ))}
               </div>
             </div>
+
+            {/* ===== VERSACE MIRROR FIT ===== */}
+            <PhotoCard
+              src="/photos/versace-mirror-fit.jpg"
+              alt="Versace hotel mirror fit check"
+              variant="inline"
+              caption="fit check before we step out"
+            />
           </div>
         </div>
       </section>
@@ -382,8 +411,8 @@ export default function DayPage() {
           variant="warm"
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {daytimeSpots.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} delay={i * 80} tagVariant="warm" />
             ))}
@@ -407,8 +436,8 @@ export default function DayPage() {
           variant="warm"
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-4xl mx-auto space-y-16">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-5xl mx-auto space-y-16">
             {dayItinerary.map((day, dayIdx) => (
               <MotionWrapper key={day.day}>
                 <div className="border-l-2 border-dirty-orange/20 pl-6 sm:pl-8">
@@ -461,8 +490,8 @@ export default function DayPage() {
 
       {/* ===== MEME ===== */}
       <AmbientMediaLayer gradient="warm">
-        <div className="py-16 sm:py-24 px-6">
-          <div className="max-w-5xl mx-auto">
+        <div className="py-16 sm:py-24 px-6 lg:px-12">
+          <div className="max-w-7xl mx-auto">
             <QuoteBlock
               text="understood the assignment"
               attribution="-- you, after day one"

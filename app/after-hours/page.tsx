@@ -8,6 +8,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 import FooterFrame from "@/components/FooterFrame";
 import MotionWrapper from "@/components/MotionWrapper";
 import ChapterNav from "@/components/ChapterNav";
+import PhotoCard from "@/components/PhotoCard";
 
 /* =====================================================================
    DATA
@@ -144,8 +145,8 @@ export default function AfterHoursPage() {
           intro="the restaurants closed hours ago. the real food map opens now. waffle house. wings. somebody's trunk. this is where the stories come from."
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
             {lateNightFood.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} glow delay={i * 100} tagVariant="glow" />
             ))}
@@ -169,8 +170,8 @@ export default function AfterHoursPage() {
           intro="nobody follows the itinerary after midnight. here's what actually happens."
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-3xl mx-auto">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-4xl mx-auto">
             {chaosTimeline.map((event, i) => (
               <MotionWrapper key={event.time} delay={i * 80}>
                 <div className="flex gap-4 mb-8 last:mb-0">
@@ -192,9 +193,22 @@ export default function AfterHoursPage() {
         </div>
       </section>
 
+      {/* ===== VERSACE BOOT -- comedy moment ===== */}
+      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
+        <div className="max-w-7xl mx-auto">
+          <PhotoCard
+            src="/photos/versace-boot.jpg"
+            alt="Versace leg in medical boot -- pimp down moment"
+            variant="chaos"
+            overlay="Pimp down! Pimp down...."
+            caption="the after hours don't always go as planned"
+          />
+        </div>
+      </section>
+
       {/* ===== THIS IS FINE INTERLUDE ===== */}
       <AmbientMediaLayer gradient="purple">
-        <div className="py-16 sm:py-24 px-6">
+        <div className="py-16 sm:py-24 px-6 lg:px-12">
           <div className="max-w-4xl mx-auto space-y-8">
             <QuoteBlock
               text="this is fine"
@@ -219,8 +233,8 @@ export default function AfterHoursPage() {
           intro="saturday. you made it. everything hurts but nothing is broken. time to eat brunch like you earned it, because you did."
         />
 
-        <div className="px-6 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-3xl mx-auto">
+        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+          <div className="max-w-4xl mx-auto">
             {saturdayWindDown.map((event, i) => (
               <MotionWrapper key={event.time} delay={i * 80}>
                 <div className="flex gap-4 mb-8 last:mb-0">
@@ -249,7 +263,7 @@ export default function AfterHoursPage() {
 
       {/* ===== CLOSING ===== */}
       <AmbientMediaLayer gradient="purple">
-        <div className="py-20 sm:py-28 px-6 text-center">
+        <div className="py-20 sm:py-28 px-6 lg:px-12 text-center">
           <MotionWrapper>
             <p className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl text-club-purple neon-glow-subtle leading-snug max-w-3xl mx-auto uppercase tracking-wide">
               uber to airport. already planning the return trip.
