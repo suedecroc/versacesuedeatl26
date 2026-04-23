@@ -23,6 +23,8 @@ const inmanPark = [
     mustOrder: "patatas bravas, rioja by the glass",
     description:
       "tapas that hit different when you're three glasses in. the patio is the move. share everything, commit to nothing.",
+    website: "https://barcelonawinebar.com",
+    mapUrl: "https://maps.google.com/?q=Barcelona+Wine+Bar,+240+N+Highland+Ave+NE,+Atlanta,+GA",
   },
   {
     name: "Sotto Sotto",
@@ -31,6 +33,7 @@ const inmanPark = [
     mustOrder: "linguine del pescatore",
     description:
       "nearly 30 years and still consistent. romantic lighting, soft jazz, halibut with white wine. date night certified even if you came alone.",
+    mapUrl: "https://maps.google.com/?q=Sotto+Sotto,+313+N+Highland+Ave+NE,+Atlanta,+GA",
   },
   {
     name: "Beetlecat",
@@ -39,6 +42,8 @@ const inmanPark = [
     mustOrder: "lobster roll, oysters",
     description:
       "upscale seafood with a 70s surf shack den downstairs. two patios. the lobster roll atlanta won't stop talking about. reservations recommended.",
+    website: "https://beetlecatatl.com",
+    mapUrl: "https://maps.google.com/?q=Beetlecat,+299+N+Highland+Ave+NE,+Atlanta,+GA",
   },
   {
     name: "Boccalupo",
@@ -47,6 +52,8 @@ const inmanPark = [
     mustOrder: "black spaghetti, snickerdoodle cookies",
     description:
       "handmade pasta. seasonal menu. wine list that makes decisions harder. skip the cookies at your own risk.",
+    website: "https://boccalupoatl.com",
+    mapUrl: "https://maps.google.com/?q=Boccalupo,+753+Edgewood+Ave+NE,+Atlanta,+GA",
   },
   {
     name: "Bread & Butterfly",
@@ -54,6 +61,7 @@ const inmanPark = [
     tags: ["brunch", "french", "cafe"],
     description:
       "perfect croissants. steel doors open to elizabeth street. this is that 'we on vacation' breakfast energy. cappuccino and pastry, no rush.",
+    mapUrl: "https://maps.google.com/?q=Bread+%26+Butterfly,+290+Elizabeth+St+NE,+Atlanta,+GA",
   },
   {
     name: "Delbar",
@@ -62,6 +70,8 @@ const inmanPark = [
     mustOrder: "koobideh kabob, dill labneh",
     description:
       "persian cuisine in a trendy room. everything on the menu hits. expect a wait at dinner. worth it every time.",
+    website: "https://delbaratl.com",
+    mapUrl: "https://maps.google.com/?q=Delbar,+211+Elizabeth+St+NE,+Atlanta,+GA",
   },
 ];
 
@@ -72,6 +82,8 @@ const krogStreet = [
     tags: ["burgers", "lunch"],
     description:
       "better-than-almost-anywhere burgers. this is the standard. don't overthink it, just order.",
+    website: "https://fredsmeatandbread.com",
+    mapUrl: "https://maps.google.com/?q=Fred%27s+Meat+%26+Bread,+99+Krog+St+NE,+Atlanta,+GA",
   },
   {
     name: "Varuni Napoli",
@@ -79,6 +91,8 @@ const krogStreet = [
     tags: ["pizza", "lunch"],
     description:
       "neapolitan pizza done right. soft crunchy crust that requires repeat visits. worth the line.",
+    website: "https://varuni.us",
+    mapUrl: "https://maps.google.com/?q=Varuni+Napoli,+99+Krog+St+NE,+Atlanta,+GA",
   },
   {
     name: "Ticonderoga Club",
@@ -86,6 +100,8 @@ const krogStreet = [
     tags: ["cocktails", "elevated dive"],
     description:
       "dive bar space with craft bar execution. inventive cocktails, solid mocktails. the bar you didn't know you needed.",
+    website: "https://ticonderogaclub.com",
+    mapUrl: "https://maps.google.com/?q=Ticonderoga+Club,+99+Krog+St+NE,+Atlanta,+GA",
   },
   {
     name: "Jai Ho",
@@ -93,6 +109,7 @@ const krogStreet = [
     tags: ["indian", "street food"],
     description:
       "indian street food that's worth the line. krog street staple. flavor that stays with you.",
+    mapUrl: "https://maps.google.com/?q=Jai+Ho,+99+Krog+St+NE,+Atlanta,+GA",
   },
 ];
 
@@ -103,6 +120,7 @@ const kirkwood = [
     tags: ["seafood", "raw bar", "lunch"],
     description:
       "kirkwood's newest gem. fresh oysters, elevated cocktails, customizable crudos. sit at the bar. order everything. grown folks lunch perfection.",
+    mapUrl: "https://maps.google.com/?q=The+Argonaut,+470+Flat+Shoals+Ave+SE,+Atlanta,+GA",
   },
   {
     name: "Sun in My Belly",
@@ -110,6 +128,8 @@ const kirkwood = [
     tags: ["brunch", "cafe"],
     description:
       "interesting cafe classics. capri sun cocktails. rustic space. the kind of brunch where you lose track of time.",
+    website: "https://suninmybelly.com",
+    mapUrl: "https://maps.google.com/?q=Sun+in+My+Belly,+2161+College+Ave+NE,+Atlanta,+GA",
   },
   {
     name: "The Albert",
@@ -118,6 +138,7 @@ const kirkwood = [
     mustOrder: "smoked wings",
     description:
       "legendary smoked wings. best burger contender. voted best neighborhood bar repeatedly. pull up, order a beer, become family.",
+    mapUrl: "https://maps.google.com/?q=The+Albert,+1389+Boulevard+SE,+Atlanta,+GA",
   },
 ];
 
@@ -128,6 +149,8 @@ const daytimeSpots = [
     tags: ["walk", "art", "reset"],
     description:
       "the beltline is doing what it does. joggers, dogs, somebody playing saxophone for no reason. you walk it because it resets you.",
+    website: "https://beltline.org",
+    mapUrl: "https://maps.google.com/?q=Atlanta+Beltline+Eastside+Trail,+Atlanta,+GA",
   },
   {
     name: "World of Coca-Cola",
@@ -135,6 +158,8 @@ const daytimeSpots = [
     tags: ["attraction", "pilgrimage"],
     description:
       "vault tour. secret formula. taste testing room with 100+ beverages from around the world. spend 2 hours. buy the merch. no shame.",
+    website: "https://worldofcoca-cola.com",
+    mapUrl: "https://maps.google.com/?q=World+of+Coca-Cola,+121+Baker+St+NW,+Atlanta,+GA",
   },
   {
     name: "Ponce City Market Rooftop",
@@ -142,6 +167,8 @@ const daytimeSpots = [
     tags: ["skyline", "drinks", "views"],
     description:
       "skyline bar. mini golf. carnival games. this is atlanta showing off and you're allowed to enjoy it.",
+    website: "https://poncecitymarket.com",
+    mapUrl: "https://maps.google.com/?q=Ponce+City+Market,+675+Ponce+de+Leon+Ave+NE,+Atlanta,+GA",
   },
   {
     name: "SIX the Musical -- Fox Theatre",
@@ -149,6 +176,8 @@ const daytimeSpots = [
     tags: ["theatre", "broadway", "grown"],
     description:
       "british musical about henry VIII's six wives. modern pop meets tudor history. fox theatre is stunning. dress grown.",
+    website: "https://foxtheatre.org",
+    mapUrl: "https://maps.google.com/?q=Fox+Theatre,+660+Peachtree+St+NE,+Atlanta,+GA",
   },
   {
     name: "A Cappella Books",
@@ -156,6 +185,8 @@ const daytimeSpots = [
     tags: ["books", "quiet", "culture"],
     description:
       "the kind of bookstore that smells like decisions. you'll leave with something you didn't plan on. that's the point.",
+    website: "https://acappellabooks.com",
+    mapUrl: "https://maps.google.com/?q=A+Cappella+Books,+208+Haralson+Ave+NE,+Atlanta,+GA",
   },
   {
     name: "Virginia Highland",
@@ -163,6 +194,7 @@ const daytimeSpots = [
     tags: ["stroll", "charming", "brunch"],
     description:
       "charming and walkable. brunch at murphy's if you time it right. evening strolls that make you forget you're visiting.",
+    mapUrl: "https://maps.google.com/?q=Virginia+Highland,+Atlanta,+GA",
   },
 ];
 

@@ -21,6 +21,8 @@ const sunsetSpots = [
     tags: ["skyline", "golden hour", "drinks"],
     description:
       "the skyline turns orange up here. drink in hand, city below, no agenda. this is the transition you came for.",
+    website: "https://poncecitymarket.com",
+    mapUrl: "https://maps.google.com/?q=Ponce+City+Market,+675+Ponce+de+Leon+Ave+NE,+Atlanta,+GA",
   },
   {
     name: "Beltline at Dusk",
@@ -28,6 +30,8 @@ const sunsetSpots = [
     tags: ["walk", "art", "golden hour"],
     description:
       "the beltline changes after 5. the joggers thin out. the light gets long. the murals look different. you walk slower and that's the point.",
+    website: "https://beltline.org",
+    mapUrl: "https://maps.google.com/?q=Atlanta+Beltline+Eastside+Trail,+Atlanta,+GA",
   },
   {
     name: "Virginia Highland Evening",
@@ -35,6 +39,7 @@ const sunsetSpots = [
     tags: ["stroll", "pre-dinner", "charming"],
     description:
       "tree-lined streets catching the last light. window shopping nobody asked for. the pre-dinner stroll that sets the tone.",
+    mapUrl: "https://maps.google.com/?q=Virginia+Highland,+Atlanta,+GA",
   },
   {
     name: "Inman Park at Sunset",
@@ -42,6 +47,7 @@ const sunsetSpots = [
     tags: ["architecture", "golden light", "quiet"],
     description:
       "victorian homes in golden light. the porches. the quiet streets. atlanta's first suburb looking exactly how it's supposed to at this hour.",
+    mapUrl: "https://maps.google.com/?q=Inman+Park,+Atlanta,+GA",
   },
 ];
 
@@ -52,6 +58,8 @@ const transitionSpots = [
     tags: ["cocktails", "pre-game", "golden hour"],
     description:
       "the cocktail that bridges afternoon and evening. dive bar space, craft bar execution. you came in daylight, you'll leave in dark.",
+    website: "https://ticonderogaclub.com",
+    mapUrl: "https://maps.google.com/?q=Ticonderoga+Club,+99+Krog+St+NE,+Atlanta,+GA",
   },
   {
     name: "Barcelona Wine Bar",
@@ -59,6 +67,8 @@ const transitionSpots = [
     tags: ["wine", "patio", "transition"],
     description:
       "the patio at golden hour. rioja in hand. tapas arriving. the city shifting around you while you stay exactly where you are.",
+    website: "https://barcelonawinebar.com",
+    mapUrl: "https://maps.google.com/?q=Barcelona+Wine+Bar,+240+N+Highland+Ave+NE,+Atlanta,+GA",
   },
   {
     name: "Bread & Butterfly",
@@ -66,6 +76,7 @@ const transitionSpots = [
     tags: ["bistro", "wine", "evening"],
     description:
       "becomes a different place at dinner. the bistro menu. the wine list. steel doors open to a street going gold.",
+    mapUrl: "https://maps.google.com/?q=Bread+%26+Butterfly,+290+Elizabeth+St+NE,+Atlanta,+GA",
   },
 ];
 

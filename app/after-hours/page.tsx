@@ -21,6 +21,8 @@ const lateNightFood = [
     tags: ["3AM", "sacred", "no judgment"],
     description:
       "it's 3AM. you're in a waffle house parking lot. somebody's arguing about hash brown preparation. scattered, smothered, covered. this is the real itinerary.",
+    website: "https://wafflehouse.com",
+    mapUrl: "https://maps.google.com/?q=Waffle+House,+Atlanta,+GA",
   },
   {
     name: "The Varsity",
@@ -28,6 +30,8 @@ const lateNightFood = [
     tags: ["legendary", "late", "messy"],
     description:
       "what'll ya have? what'll ya have? the largest drive-in restaurant in the world and it's open late. chili dogs at 2AM. no regrets until 6AM.",
+    website: "https://thevarsity.com",
+    mapUrl: "https://maps.google.com/?q=The+Varsity,+61+North+Ave+NW,+Atlanta,+GA",
   },
   {
     name: "Sublime Doughnuts",
@@ -35,6 +39,8 @@ const lateNightFood = [
     tags: ["late", "sweet", "reward"],
     description:
       "open late. the a-town cream doughnut. you earned this. whatever happened tonight, this fixes it.",
+    website: "https://sublimedoughnuts.com",
+    mapUrl: "https://maps.google.com/?q=Sublime+Doughnuts,+535+10th+St+NW,+Atlanta,+GA",
   },
   {
     name: "Lemon Pepper Wings",
@@ -42,6 +48,7 @@ const lateNightFood = [
     tags: ["sacred", "mandatory", "3AM"],
     description:
       "it's 3AM. somebody brought lemon pepper wings. you don't ask where from. you just eat. this is the real itinerary.",
+    mapUrl: "https://maps.google.com/?q=lemon+pepper+wings,+Atlanta,+GA",
   },
 ];
 

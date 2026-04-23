@@ -23,6 +23,7 @@ const edgewoodSpots = [
     tags: ["intimate", "weird", "neon"],
     description:
       "irreverent religious art everywhere. ping pong tables. strong drinks. organ karaoke on wednesday. this where atlanta's weird and wonderful collide. the starting point.",
+    mapUrl: "https://maps.google.com/?q=Sister+Louisa%27s+Church,+466+Edgewood+Ave+SE,+Atlanta,+GA",
   },
   {
     name: "Sound Table",
@@ -30,6 +31,8 @@ const edgewoodSpots = [
     tags: ["loud", "intimate", "music"],
     description:
       "two vibes in one spot. restaurant up front, dance floor in back. the music is always right. the cocktails know what they're doing.",
+    website: "https://thesoundtable.com",
+    mapUrl: "https://maps.google.com/?q=Sound+Table,+483+Edgewood+Ave,+Atlanta,+GA",
   },
   {
     name: "Mother Bar",
@@ -37,6 +40,7 @@ const edgewoodSpots = [
     tags: ["loud", "late", "neon"],
     description:
       "intimate and loud at the same time. strong drinks, darker corners, the kind of bar where conversations get honest.",
+    mapUrl: "https://maps.google.com/?q=Mother+Bar,+487+Edgewood+Ave,+Atlanta,+GA",
   },
   {
     name: "Joystick Gamebar",
@@ -44,6 +48,8 @@ const edgewoodSpots = [
     tags: ["arcade", "drinks", "neon"],
     description:
       "nostalgia meets alcohol. arcade games, craft cocktails. you'll lose at street fighter and not care. grown folks fun.",
+    website: "https://joystickgamebar.com",
+    mapUrl: "https://maps.google.com/?q=Joystick+Gamebar,+427+Edgewood+Ave,+Atlanta,+GA",
   },
   {
     name: "Church Bar",
@@ -51,6 +57,7 @@ const edgewoodSpots = [
     tags: ["late", "dive", "neon"],
     description:
       "dark. loud. exactly what you'd expect from a bar on edgewood at midnight. no pretense, no judgment, no closing time you'll remember.",
+    mapUrl: "https://maps.google.com/?q=Church+Bar,+Edgewood+Ave,+Atlanta,+GA",
   },
   {
     name: "Lore",
@@ -58,6 +65,7 @@ const edgewoodSpots = [
     tags: ["loud", "inclusive", "late"],
     description:
       "new in 2025. LGBTQ+ spot with dance parties, drag shows, karaoke. two floors. mammoth disco ball. unpretentious fun. inclusive energy.",
+    mapUrl: "https://maps.google.com/?q=Lore,+Edgewood+Ave,+Atlanta,+GA",
   },
   {
     name: "Pisces",
@@ -65,6 +73,7 @@ const edgewoodSpots = [
     tags: ["loud", "music-forward", "neon"],
     description:
       "music-forward club. cool young crowd. DJ ree de la vega's spot. wednesday through saturday. edgewood's newest addition to the rotation.",
+    mapUrl: "https://maps.google.com/?q=Pisces,+Edgewood+Ave,+Atlanta,+GA",
   },
 ];
 
@@ -75,6 +84,7 @@ const bigNightSpots = [
     tags: ["legendary", "late", "non-negotiable"],
     description:
       "you already know. lemon pepper wings, legendary status, no explanation needed. founded 1985. future's second home. dress casual but sophisticated. bring cash in ones. respect the culture.",
+    mapUrl: "https://maps.google.com/?q=Magic+City,+241+Forsyth+St+SW,+Atlanta,+GA",
   },
   {
     name: "Koo Koo Room",
@@ -82,6 +92,7 @@ const bigNightSpots = [
     tags: ["loud", "upscale", "neon"],
     description:
       "LED lights. top DJs. lively crowd. modern look. buckhead nightlife staple. dress fresh or don't bother.",
+    mapUrl: "https://maps.google.com/?q=Koo+Koo+Room,+1140+Crescent+Ave+NE,+Atlanta,+GA",
   },
   {
     name: "Havana Club",
@@ -89,6 +100,7 @@ const bigNightSpots = [
     tags: ["late", "latin", "loud"],
     description:
       "since 1996. latin spirit meets top 40. two rooms. happy hour 9-11pm. buckhead staple that's been doing this longer than most.",
+    mapUrl: "https://maps.google.com/?q=Havana+Club,+Buckhead,+Atlanta,+GA",
   },
   {
     name: "Domaine",
@@ -96,6 +108,7 @@ const bigNightSpots = [
     tags: ["loud", "reckless", "neon"],
     description:
       "26,000 square feet of vegas glamour in midtown. top DJs. award-winning artists. this is atlanta flexing on purpose.",
+    mapUrl: "https://maps.google.com/?q=Domaine,+Midtown,+Atlanta,+GA",
   },
 ];
 
@@ -106,6 +119,8 @@ const lateDinnerSpots = [
     tags: ["pasta", "late dinner"],
     description:
       "9pm pasta run. black spaghetti if it's on. the snickerdoodle cookies close out the meal and you'll thank yourself.",
+    website: "https://boccalupoatl.com",
+    mapUrl: "https://maps.google.com/?q=Boccalupo,+753+Edgewood+Ave+NE,+Atlanta,+GA",
   },
   {
     name: "Beetlecat",
@@ -113,6 +128,8 @@ const lateDinnerSpots = [
     tags: ["seafood", "pre-club"],
     description:
       "6pm oysters before the night starts. the lobster roll as fuel. the den downstairs for one more drink before you commit to edgewood.",
+    website: "https://beetlecatatl.com",
+    mapUrl: "https://maps.google.com/?q=Beetlecat,+299+N+Highland+Ave+NE,+Atlanta,+GA",
   },
   {
     name: "The Albert",
@@ -120,6 +137,7 @@ const lateDinnerSpots = [
     tags: ["wings", "nightcap"],
     description:
       "11:30pm smoked wings. the neighborhood bar that becomes the last stop or the refueling station depending on what kind of night it is.",
+    mapUrl: "https://maps.google.com/?q=The+Albert,+1389+Boulevard+SE,+Atlanta,+GA",
   },
 ];
 

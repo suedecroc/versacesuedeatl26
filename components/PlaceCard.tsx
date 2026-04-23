@@ -11,6 +11,8 @@ interface PlaceCardProps {
   glow?: boolean;
   delay?: number;
   tagVariant?: "default" | "glow" | "warm";
+  website?: string;
+  mapUrl?: string;
 }
 
 export default function PlaceCard({
@@ -23,6 +25,8 @@ export default function PlaceCard({
   glow = false,
   delay = 0,
   tagVariant = "default",
+  website,
+  mapUrl,
 }: PlaceCardProps) {
   return (
     <MotionWrapper delay={delay}>
@@ -74,6 +78,39 @@ export default function PlaceCard({
             {tags.map((tag) => (
               <MoodTag key={tag} label={tag} variant={glow ? "glow" : tagVariant} />
             ))}
+          </div>
+        )}
+
+        {(website || mapUrl) && (
+          <div className={`flex gap-4 mt-4 pt-3 border-t ${dark ? "border-cream/8" : "border-midnight/10"}`}>
+            {website && (
+              <a
+                href={website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`font-[family-name:var(--font-heading)] text-[10px] tracking-[0.15em] uppercase transition-colors ${
+                  dark
+                    ? `text-cream/30 ${tagVariant === "warm" ? "hover:text-dirty-orange" : "hover:text-neon-pink"}`
+                    : "text-midnight/40 hover:text-midnight"
+                }`}
+              >
+                website ↗
+              </a>
+            )}
+            {mapUrl && (
+              <a
+                href={mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`font-[family-name:var(--font-heading)] text-[10px] tracking-[0.15em] uppercase transition-colors ${
+                  dark
+                    ? `text-cream/30 ${tagVariant === "warm" ? "hover:text-dirty-orange" : "hover:text-neon-pink"}`
+                    : "text-midnight/40 hover:text-midnight"
+                }`}
+              >
+                maps ↗
+              </a>
+            )}
           </div>
         )}
       </div>
