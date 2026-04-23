@@ -2,7 +2,6 @@ import Nav from "@/components/Nav";
 import ChapterIntro from "@/components/ChapterIntro";
 import PlaceCard from "@/components/PlaceCard";
 import QuoteBlock from "@/components/QuoteBlock";
-import SectionDivider from "@/components/SectionDivider";
 import AmbientMediaLayer from "@/components/AmbientMediaLayer";
 import FloatingCTA from "@/components/FloatingCTA";
 import FooterFrame from "@/components/FooterFrame";
@@ -119,7 +118,6 @@ export default function GoldenHourPage() {
             intro="the city shifts around 5. the light gets long and warm. the pace drops half a gear. you're between things -- between day and night, between plans, between versions of yourself. this is the in-between and it's the best part."
             variant="warm"
           />
-          {/* MS Paint -- dreamy nostalgia shot for the in-between hour */}
           <div className="px-6 lg:px-12 pb-12">
             <div className="max-w-7xl mx-auto">
               <PhotoCard
@@ -134,11 +132,11 @@ export default function GoldenHourPage() {
         </div>
       </AmbientMediaLayer>
 
-      {/* ===== THE SHIFT ===== */}
-      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+      {/* ===== 01 — THE SHIFT ===== */}
+      <section className="py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto space-y-12">
           <ChapterIntro
-            eyebrow="The Shift"
+            eyebrow="01 — The Shift"
             title="When the Light Changes"
             intro="atlanta at golden hour is a different city. the concrete goes warm. the trees cast long shadows on the beltline. every patio becomes the right patio."
             variant="warm"
@@ -151,41 +149,30 @@ export default function GoldenHourPage() {
         </div>
       </section>
 
-      <AmbientMediaLayer gradient="warm">
-        <div className="py-20 px-6 lg:px-12">
-          <QuoteBlock
-            text="you're driving through midtown and the light hits the glass buildings and for a second the whole city looks like it was designed for exactly this moment"
-          />
-        </div>
-      </AmbientMediaLayer>
+      <QuoteBlock
+        text="you're driving through midtown and the light hits the glass buildings and for a second the whole city looks like it was designed for exactly this moment"
+      />
 
-      <SectionDivider />
-
-      {/* ===== BRIDGE ===== */}
-      <section className="bg-sweat grain py-20 px-6 lg:px-12">
+      {/* ===== 02 — THE BRIDGE ===== */}
+      <section className="py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto space-y-12">
           <ChapterIntro
-            eyebrow="The Bridge"
+            eyebrow="02 — The Bridge"
             title="Between Day & Night"
             intro="these are the spots where afternoon becomes evening. you came in daylight. you'll leave in dark. that's the whole trick."
             variant="warm"
           />
-
-          {/* Sunglasses -- golden hour approved, right before the bar spots */}
           <PhotoCard
             src="/photos/versace-sunglasses.jpg"
             alt="Versace with blue mirror shades at golden hour"
             variant="inline"
             caption="golden hour approved"
           />
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {transitionSpots.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} delay={i * 100} tagVariant="warm" />
             ))}
           </div>
-
-          {/* Bathroom fit -- post-bar, getting ready for night */}
           <PhotoCard
             src="/photos/versace-bathroom-fit.jpg"
             alt="Versace bathroom fit -- mirror selfie"
@@ -195,18 +182,23 @@ export default function GoldenHourPage() {
         </div>
       </section>
 
-      <SectionDivider />
-
-      {/* ===== TIMELINE ===== */}
-      <section className="bg-midnight grain py-20 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <ChapterIntro
-            eyebrow="The Flow"
-            title="How the Evening Builds"
-            intro="golden hour has a rhythm. you don't force it. you let it carry you from rooftop to beltline to patio to dinner. the city does the work."
-            variant="warm"
-          />
-          <div className="max-w-4xl mx-auto mt-16">
+      {/* ===== 03 — THE FLOW ===== */}
+      <section className="bg-sweat grain py-24 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <MotionWrapper>
+            <div className="max-w-3xl mx-auto">
+              <p className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] uppercase mb-4 text-dirty-orange neon-glow-subtle">
+                03 — The Flow
+              </p>
+              <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,8vw,5rem)] leading-[0.9] tracking-tight uppercase text-cream neon-glow-subtle">
+                How the Evening Builds
+              </h2>
+              <p className="font-[family-name:var(--font-body)] text-base sm:text-lg mt-6 leading-relaxed max-w-2xl text-cream/60">
+                golden hour has a rhythm. you don't force it. you let it carry you from rooftop to beltline to patio to dinner. the city does the work.
+              </p>
+            </div>
+          </MotionWrapper>
+          <div className="max-w-4xl mx-auto">
             {goldenItinerary.map((event, i) => (
               <MotionWrapper key={event.time} delay={i * 80}>
                 <div className="flex gap-4 mb-8 last:mb-0">
@@ -228,21 +220,9 @@ export default function GoldenHourPage() {
         </div>
       </section>
 
-      {/* ===== DRIVING INTERLUDE ===== */}
-      <AmbientMediaLayer gradient="warm">
-        <div className="py-20 sm:py-28 px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <QuoteBlock
-              text="the gas station at golden hour. the way the light hits the pump. the way you're standing there and the city sounds different. this is cinematic for no reason."
-            />
-            <MotionWrapper delay={200}>
-              <p className="font-[family-name:var(--font-body)] text-cream/40 text-sm text-center max-w-2xl mx-auto leading-relaxed">
-                there are drives in atlanta that matter more than the destination. peachtree street when the lights start coming on. the connector when traffic breaks for exactly one second. the back roads through virginia highland where every house has a porch light and it feels like a movie you&apos;ve already seen.
-              </p>
-            </MotionWrapper>
-          </div>
-        </div>
-      </AmbientMediaLayer>
+      <QuoteBlock
+        text="the gas station at golden hour. the way the light hits the pump. the way you're standing there and the city sounds different. this is cinematic for no reason."
+      />
 
       <ChapterNav
         prev={{ href: "/day", label: "Day" }}

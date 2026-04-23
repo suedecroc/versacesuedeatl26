@@ -2,7 +2,6 @@ import Nav from "@/components/Nav";
 import ChapterIntro from "@/components/ChapterIntro";
 import PlaceCard from "@/components/PlaceCard";
 import QuoteBlock from "@/components/QuoteBlock";
-import SectionDivider from "@/components/SectionDivider";
 import AmbientMediaLayer from "@/components/AmbientMediaLayer";
 import FloatingCTA from "@/components/FloatingCTA";
 import FooterFrame from "@/components/FooterFrame";
@@ -125,7 +124,6 @@ export default function AfterHoursPage() {
             title="After Hours"
             intro="the truth shows up after midnight. the city strips down to what it actually is. the neon is still on but the performance is over. what's left is the real thing -- messy, honest, funny, exhausted, and still somehow going."
           />
-          {/* Ed Boy meme -- after-hours energy */}
           <div className="px-6 lg:px-12 pb-12">
             <div className="max-w-7xl mx-auto">
               <PhotoCard
@@ -146,13 +144,11 @@ export default function AfterHoursPage() {
         attribution="-- Nick Colletti, vine legend"
       />
 
-      <SectionDivider />
-
-      {/* ===== FEED THE CHAOS ===== */}
-      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+      {/* ===== 01 — FEED THE CHAOS ===== */}
+      <section className="py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto space-y-12">
           <ChapterIntro
-            eyebrow="3AM Menu"
+            eyebrow="01 — 3AM Menu"
             title="Feed the Chaos"
             intro="the restaurants closed hours ago. the real food map opens now. waffle house. wings. somebody's trunk. this is where the stories come from."
           />
@@ -161,8 +157,6 @@ export default function AfterHoursPage() {
               <PlaceCard key={spot.name} {...spot} glow delay={i * 100} tagVariant="glow" />
             ))}
           </div>
-
-          {/* Boot photo -- pimp down comedy moment */}
           <PhotoCard
             src="/photos/versace-boot.jpg"
             alt="Versace leg in medical boot -- pimp down moment"
@@ -173,16 +167,22 @@ export default function AfterHoursPage() {
         </div>
       </section>
 
-      <SectionDivider />
-
-      {/* ===== CHAOS TIMELINE ===== */}
-      <section className="bg-sweat grain py-20 px-6 lg:px-12">
+      {/* ===== 02 — THE REAL SCHEDULE ===== */}
+      <section className="bg-sweat grain py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto space-y-12">
-          <ChapterIntro
-            eyebrow="The Real Schedule"
-            title="How the Night Actually Goes"
-            intro="nobody follows the itinerary after midnight. here's what actually happens."
-          />
+          <MotionWrapper>
+            <div className="max-w-3xl mx-auto">
+              <p className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] uppercase mb-4 text-club-purple neon-glow-subtle">
+                02 — The Real Schedule
+              </p>
+              <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,8vw,5rem)] leading-[0.9] tracking-tight uppercase text-cream neon-glow-subtle">
+                How the Night Actually Goes
+              </h2>
+              <p className="font-[family-name:var(--font-body)] text-base sm:text-lg mt-6 leading-relaxed max-w-2xl text-cream/60">
+                nobody follows the itinerary after midnight. here&apos;s what actually happens.
+              </p>
+            </div>
+          </MotionWrapper>
           <div className="max-w-4xl mx-auto">
             {chaosTimeline.map((event, i) => (
               <MotionWrapper key={event.time} delay={i * 80}>
@@ -205,28 +205,24 @@ export default function AfterHoursPage() {
         </div>
       </section>
 
-      {/* ===== THIS IS FINE INTERLUDE ===== */}
-      <AmbientMediaLayer gradient="purple">
-        <div className="py-16 sm:py-24 px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <QuoteBlock
-              text="this is fine"
-              attribution="-- you, at 3AM in the waffle house"
-            />
-            <MotionWrapper delay={200}>
-              <p className="font-[family-name:var(--font-body)] text-cream/30 text-sm text-center max-w-2xl mx-auto leading-relaxed">
-                the after hours chapter is not about destinations. it&apos;s about what happens when the plan dissolves. the parking lot conversations. the uber ride confessionals. the hotel lobby at 4AM when you&apos;re the only person alive who&apos;s not sleeping. future is playing from someone&apos;s phone. bass heavy, slow confidence. you&apos;re not tired. you&apos;re just honest.
-              </p>
-            </MotionWrapper>
-          </div>
-        </div>
-      </AmbientMediaLayer>
+      <QuoteBlock
+        text="this is fine"
+        attribution="-- you, at 3AM in the waffle house"
+      />
 
-      {/* ===== VICTORY LAP ===== */}
-      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+      <MotionWrapper>
+        <div className="py-8 px-6 lg:px-12">
+          <p className="font-[family-name:var(--font-body)] text-cream/30 text-sm text-center max-w-2xl mx-auto leading-relaxed">
+            the after hours chapter is not about destinations. it&apos;s about what happens when the plan dissolves. the parking lot conversations. the uber ride confessionals. the hotel lobby at 4AM when you&apos;re the only person alive who&apos;s not sleeping. future is playing from someone&apos;s phone. bass heavy, slow confidence. you&apos;re not tired. you&apos;re just honest.
+          </p>
+        </div>
+      </MotionWrapper>
+
+      {/* ===== 03 — VICTORY LAP ===== */}
+      <section className="py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto space-y-12">
           <ChapterIntro
-            eyebrow="The Last Day"
+            eyebrow="03 — The Last Day"
             title="Victory Lap"
             intro="saturday. you made it. everything hurts but nothing is broken. time to eat brunch like you earned it, because you did."
           />
@@ -256,17 +252,6 @@ export default function AfterHoursPage() {
           </div>
         </div>
       </section>
-
-      {/* ===== CLOSING ===== */}
-      <AmbientMediaLayer gradient="purple">
-        <div className="py-20 sm:py-28 px-6 lg:px-12 text-center">
-          <MotionWrapper>
-            <p className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl text-club-purple neon-glow-subtle leading-snug max-w-3xl mx-auto uppercase tracking-wide">
-              uber to airport. already planning the return trip.
-            </p>
-          </MotionWrapper>
-        </div>
-      </AmbientMediaLayer>
 
       <ChapterNav
         prev={{ href: "/nightlife", label: "Nightlife" }}

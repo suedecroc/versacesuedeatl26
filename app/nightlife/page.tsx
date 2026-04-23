@@ -2,7 +2,6 @@ import Nav from "@/components/Nav";
 import ChapterIntro from "@/components/ChapterIntro";
 import PlaceCard from "@/components/PlaceCard";
 import QuoteBlock from "@/components/QuoteBlock";
-import SectionDivider from "@/components/SectionDivider";
 import AmbientMediaLayer from "@/components/AmbientMediaLayer";
 import MobileCarousel from "@/components/MobileCarousel";
 import FloatingCTA from "@/components/FloatingCTA";
@@ -223,7 +222,6 @@ export default function NightlifePage() {
             title="Nightlife"
             intro="the neon comes on and the city changes its mind about everything. edgewood avenue is a decision tree with no wrong answers. buckhead is where the volume goes up. magic city doesn't need your introduction."
           />
-          {/* Tailgate -- pre-game activated */}
           <div className="px-6 lg:px-12 pb-12">
             <div className="max-w-7xl mx-auto">
               <PhotoCard
@@ -243,13 +241,11 @@ export default function NightlifePage() {
         attribution="-- tiktok, valid"
       />
 
-      <SectionDivider />
-
-      {/* ===== EDGEWOOD STRIP ===== */}
-      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+      {/* ===== 01 — THE STRIP ===== */}
+      <section className="py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto space-y-12">
           <ChapterIntro
-            eyebrow="The Strip"
+            eyebrow="01 — The Strip"
             title="Edgewood Avenue"
             intro="atlanta's bar district. every door a different universe. start anywhere, end up everywhere. the strip doesn't judge."
           />
@@ -263,13 +259,11 @@ export default function NightlifePage() {
         </div>
       </section>
 
-      <SectionDivider />
-
-      {/* ===== THE BIG ROOMS ===== */}
-      <section className="bg-sweat grain py-20 px-6 lg:px-12">
+      {/* ===== 02 — THE BIG ROOMS ===== */}
+      <section className="py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto space-y-12">
           <ChapterIntro
-            eyebrow="Main Event"
+            eyebrow="02 — Main Event"
             title="The Big Rooms"
             intro="magic city is the non-negotiable. the rest depends on what kind of night you're building. buckhead goes loud. midtown goes louder. you already know which one you're choosing."
           />
@@ -278,16 +272,13 @@ export default function NightlifePage() {
               <PlaceCard key={spot.name} {...spot} glow delay={i * 100} tagVariant="glow" />
             ))}
           </div>
-
-          {/* Neon sign -- after the big rooms */}
           <PhotoCard
             src="/photos/versace-neon-sign.jpg"
             alt="Versace next to BABE YOU LOOK SO COOL neon sign"
             variant="inline"
             caption="babe you look so cool"
           />
-
-          <MotionWrapper delay={400}>
+          <MotionWrapper delay={200}>
             <div className="flex justify-center">
               <StickerButton label="Find Your Trouble" href="#night-plan" color="purple" />
             </div>
@@ -295,11 +286,11 @@ export default function NightlifePage() {
         </div>
       </section>
 
-      {/* ===== LATE DINNER ===== */}
-      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+      {/* ===== 03 — FUEL ===== */}
+      <section className="py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto space-y-12">
           <ChapterIntro
-            eyebrow="Fuel"
+            eyebrow="03 — Fuel"
             title="Late Dinner"
             intro="you're going to need food. before, during, or after. these spots know what time it is."
           />
@@ -316,14 +307,22 @@ export default function NightlifePage() {
         attribution="-- edgewood avenue, every night"
       />
 
-      {/* ===== NIGHT BY NIGHT ===== */}
-      <section id="night-plan" className="bg-midnight grain py-20 px-6 lg:px-12">
+      {/* ===== 04 — NIGHT BY NIGHT ===== */}
+      <section id="night-plan" className="bg-sweat grain py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto space-y-12">
-          <ChapterIntro
-            eyebrow="The Plan"
-            title="Night by Night"
-            intro="the after-dark itinerary. each night has its own energy. tuesday warms you up. wednesday is magic city. thursday goes deep east side. friday is the crescendo."
-          />
+          <MotionWrapper>
+            <div className="max-w-3xl mx-auto">
+              <p className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] uppercase mb-4 text-neon-pink neon-glow-subtle">
+                04 — The Plan
+              </p>
+              <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,8vw,5rem)] leading-[0.9] tracking-tight uppercase text-cream neon-glow-subtle">
+                Night by Night
+              </h2>
+              <p className="font-[family-name:var(--font-body)] text-base sm:text-lg mt-6 leading-relaxed max-w-2xl text-cream/60">
+                the after-dark itinerary. each night has its own energy. tuesday warms you up. wednesday is magic city. thursday goes deep east side. friday is the crescendo.
+              </p>
+            </div>
+          </MotionWrapper>
           <div className="max-w-5xl mx-auto space-y-16">
             {nightItinerary.map((day, dayIdx) => (
               <MotionWrapper key={day.day}>
@@ -333,8 +332,7 @@ export default function NightlifePage() {
                       className={`
                         inline-block px-4 py-1.5
                         font-[family-name:var(--font-display)] text-sm tracking-widest uppercase
-                        bg-neon-pink text-midnight
-                        -skew-x-3
+                        bg-neon-pink text-midnight -skew-x-3
                         ${dayIdx % 2 === 0 ? "rotate-chaos-1" : "rotate-chaos-2"}
                       `}
                     >
@@ -373,14 +371,9 @@ export default function NightlifePage() {
         </div>
       </section>
 
-      {/* ===== OUTRO ===== */}
-      <AmbientMediaLayer gradient="pink">
-        <div className="py-20 sm:py-28 px-6 lg:px-12">
-          <QuoteBlock
-            text="magic city doesn't need your introduction. you already know."
-          />
-        </div>
-      </AmbientMediaLayer>
+      <QuoteBlock
+        text="magic city doesn't need your introduction. you already know."
+      />
 
       <ChapterNav
         prev={{ href: "/golden-hour", label: "Golden Hour" }}

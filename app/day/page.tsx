@@ -2,7 +2,6 @@ import Nav from "@/components/Nav";
 import ChapterIntro from "@/components/ChapterIntro";
 import PlaceCard from "@/components/PlaceCard";
 import QuoteBlock from "@/components/QuoteBlock";
-import SectionDivider from "@/components/SectionDivider";
 import AmbientMediaLayer from "@/components/AmbientMediaLayer";
 import MobileCarousel from "@/components/MobileCarousel";
 import FloatingCTA from "@/components/FloatingCTA";
@@ -334,18 +333,16 @@ export default function DayPage() {
         </div>
       </AmbientMediaLayer>
 
-      {/* ===== FOOD ===== */}
-      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+      {/* ===== 01 — FOOD ===== */}
+      <section className="py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto space-y-16">
-
           <ChapterIntro
-            eyebrow="The Table"
+            eyebrow="01 — The Table"
             title="Feed Yourself"
             intro="food organized by area because atlanta sprawls and you need to eat strategically. every spot here earned its place."
             variant="warm"
           />
 
-          {/* Inman Park */}
           <div>
             <MotionWrapper>
               <h3 className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] text-dirty-orange uppercase mb-6 neon-glow-orange">
@@ -361,7 +358,6 @@ export default function DayPage() {
             </MobileCarousel>
           </div>
 
-          {/* Krog Street */}
           <div>
             <MotionWrapper>
               <h3 className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] text-dirty-orange uppercase mb-6 neon-glow-orange">
@@ -377,7 +373,6 @@ export default function DayPage() {
             </MobileCarousel>
           </div>
 
-          {/* Cat filter -- comic break between east side neighborhoods */}
           <PhotoCard
             src="/photos/jordan-cat-filter.jpg"
             alt="Jordan cat filter selfie outdoors"
@@ -385,7 +380,6 @@ export default function DayPage() {
             caption="intermission"
           />
 
-          {/* Kirkwood */}
           <div>
             <MotionWrapper>
               <h3 className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] text-dirty-orange uppercase mb-6 neon-glow-orange">
@@ -398,7 +392,6 @@ export default function DayPage() {
               ))}
             </div>
           </div>
-
         </div>
       </section>
 
@@ -407,48 +400,46 @@ export default function DayPage() {
         attribution="-- the culture"
       />
 
-      <SectionDivider />
-
-      {/* ===== EXPLORE ===== */}
-      <section className="bg-sweat grain py-20 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto space-y-16">
-
+      {/* ===== 02 — EXPLORE ===== */}
+      <section className="py-24 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
           <ChapterIntro
-            eyebrow="Explore"
+            eyebrow="02 — Explore"
             title="The Bright Hours"
             intro="before the city shifts, there's this. beltline walks, rooftop views, a bookstore that changes your afternoon plans. the daytime has its own weight here."
             variant="warm"
           />
-
-          {/* Mirror fit -- fit check before stepping out */}
           <PhotoCard
             src="/photos/versace-mirror-fit.jpg"
             alt="Versace hotel mirror fit check"
             variant="inline"
             caption="fit check before we step out"
           />
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {daytimeSpots.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} delay={i * 80} tagVariant="warm" />
             ))}
           </div>
-
         </div>
       </section>
 
-      <SectionDivider />
-
-      {/* ===== ITINERARY ===== */}
-      <section className="bg-midnight grain py-20 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <ChapterIntro
-            eyebrow="The Plan"
-            title="Day by Day"
-            intro="the daytime itinerary. flexible by design, intentional by nature. adjust as needed. atlanta rewards spontaneity."
-            variant="warm"
-          />
-          <div className="max-w-5xl mx-auto mt-16 space-y-16">
+      {/* ===== 03 — ITINERARY ===== */}
+      <section className="bg-sweat grain py-24 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <MotionWrapper>
+            <div className="max-w-3xl mx-auto">
+              <p className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] uppercase mb-4 text-dirty-orange neon-glow-subtle">
+                03 — The Plan
+              </p>
+              <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,8vw,5rem)] leading-[0.9] tracking-tight uppercase text-cream neon-glow-subtle">
+                Day by Day
+              </h2>
+              <p className="font-[family-name:var(--font-body)] text-base sm:text-lg mt-6 leading-relaxed max-w-2xl text-cream/60">
+                the daytime itinerary. flexible by design, intentional by nature. adjust as needed. atlanta rewards spontaneity.
+              </p>
+            </div>
+          </MotionWrapper>
+          <div className="max-w-5xl mx-auto space-y-16">
             {dayItinerary.map((day, dayIdx) => (
               <MotionWrapper key={day.day}>
                 <div className="border-l-2 border-dirty-orange/20 pl-6 sm:pl-8">
@@ -496,18 +487,12 @@ export default function DayPage() {
         </div>
       </section>
 
-      {/* ===== CLOSING ===== */}
-      <AmbientMediaLayer gradient="warm">
-        <div className="py-24 px-6 lg:px-12">
-          <QuoteBlock
-            text="understood the assignment"
-            attribution="-- you, after day one"
-          />
-        </div>
-      </AmbientMediaLayer>
+      <QuoteBlock
+        text="understood the assignment"
+        attribution="-- you, after day one"
+      />
 
       <ChapterNav
-        prev={{ href: "/", label: "Home" }}
         next={{ href: "/golden-hour", label: "Golden Hour" }}
       />
       <FooterFrame />

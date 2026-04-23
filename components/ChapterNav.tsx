@@ -8,42 +8,36 @@ interface ChapterNavProps {
 
 export default function ChapterNav({ prev, next }: ChapterNavProps) {
   return (
-    <MotionWrapper>
-      <div className="px-6 py-16 sm:py-20 bg-midnight">
-        <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
-          {prev ? (
-            <Link
-              href={prev.href}
-              className="group flex flex-col items-start"
-            >
-              <span className="font-[family-name:var(--font-heading)] text-[10px] tracking-[0.3em] text-cream/30 uppercase mb-1">
-                Previous
-              </span>
-              <span className="font-[family-name:var(--font-display)] text-lg sm:text-2xl text-cream/60 group-hover:text-neon-pink transition-colors uppercase tracking-wide">
-                {prev.label}
-              </span>
-            </Link>
-          ) : (
-            <div />
-          )}
-
+    <section className="bg-sweat grain py-28 sm:py-36 px-6 lg:px-12 text-center relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neon-pink/3 to-transparent pointer-events-none" />
+      <MotionWrapper>
+        <div className="relative z-10 max-w-3xl mx-auto">
           {next ? (
-            <Link
-              href={next.href}
-              className="group flex flex-col items-end"
-            >
-              <span className="font-[family-name:var(--font-heading)] text-[10px] tracking-[0.3em] text-cream/30 uppercase mb-1">
-                Next
-              </span>
-              <span className="font-[family-name:var(--font-display)] text-lg sm:text-2xl text-cream/60 group-hover:text-neon-pink transition-colors uppercase tracking-wide">
-                {next.label}
-              </span>
-            </Link>
+            <>
+              <p className="font-[family-name:var(--font-heading)] text-[10px] tracking-[0.4em] text-cream/20 uppercase mb-6">
+                Next Chapter
+              </p>
+              <Link href={next.href} className="group block">
+                <h2 className="font-[family-name:var(--font-display)] text-[clamp(3rem,12vw,8rem)] leading-[0.9] text-neon-pink neon-glow-pink uppercase tracking-tight group-hover:text-cream transition-colors duration-500">
+                  {next.label}
+                </h2>
+              </Link>
+              <div className="mt-8 w-8 h-px bg-neon-pink/40 mx-auto" />
+            </>
           ) : (
-            <div />
+            <p className="font-[family-name:var(--font-display)] text-[clamp(2rem,8vw,4rem)] leading-[0.9] text-cream/20 uppercase">
+              that&apos;s a wrap.
+            </p>
           )}
         </div>
-      </div>
-    </MotionWrapper>
+      </MotionWrapper>
+      {prev && (
+        <MotionWrapper delay={200}>
+          <p className="relative z-10 font-[family-name:var(--font-heading)] text-[10px] tracking-[0.3em] text-cream/15 uppercase mt-10">
+            ← {prev.label}
+          </p>
+        </MotionWrapper>
+      )}
+    </section>
   );
 }
