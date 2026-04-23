@@ -11,10 +11,6 @@ import MotionWrapper from "@/components/MotionWrapper";
 import ChapterNav from "@/components/ChapterNav";
 import PhotoCard from "@/components/PhotoCard";
 
-/* =====================================================================
-   DATA
-   ===================================================================== */
-
 const inmanPark = [
   {
     name: "Barcelona Wine Bar",
@@ -309,147 +305,100 @@ const dayItinerary = [
   },
 ];
 
-/* =====================================================================
-   PAGE
-   ===================================================================== */
-
 export default function DayPage() {
   return (
     <main>
       <Nav />
       <FloatingCTA />
 
-      {/* ===== CHAPTER INTRO ===== */}
+      {/* ===== HERO ===== */}
       <AmbientMediaLayer gradient="warm">
-        <div className="pt-24 sm:pt-32">
+        <div className="pt-28 sm:pt-32 pb-0">
           <ChapterIntro
             eyebrow="Chapter One"
             title="Day"
             intro="you land at 5. you don't check in yet. there's a wing spot that's been waiting since your flight left. the city is hot, bright, and not apologizing for it. you move through it the way you move through everything -- with intention and an appetite."
             variant="warm"
           />
+          <div className="px-6 lg:px-12 pb-12">
+            <div className="max-w-7xl mx-auto">
+              <PhotoCard
+                src="/photos/jordan-moodboard.jpg"
+                alt="Jordan moodboard -- bucket hat edition"
+                variant="chaos"
+                caption="mood: set"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </AmbientMediaLayer>
 
-      {/* ===== MOODBOARD PHOTO ===== */}
-      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
-        <div className="max-w-7xl mx-auto">
-          <PhotoCard
-            src="/photos/jordan-moodboard.jpg"
-            alt="Jordan moodboard -- bucket hat edition"
-            variant="inline"
-            caption="mood: set"
-            priority
+      {/* ===== FOOD ===== */}
+      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-16">
+
+          <ChapterIntro
+            eyebrow="The Table"
+            title="Feed Yourself"
+            intro="food organized by area because atlanta sprawls and you need to eat strategically. every spot here earned its place."
+            variant="warm"
           />
-        </div>
-      </section>
 
-      <QuoteBlock
-        text="hi welcome to chili's"
-        attribution="-- vine, forever"
-      />
-
-      <SectionDivider />
-
-      {/* ===== FOOD SPOTS ===== */}
-      <section className="bg-midnight grain">
-        <ChapterIntro
-          eyebrow="The Table"
-          title="Feed Yourself"
-          intro="food organized by area because atlanta sprawls and you need to eat strategically. every spot here earned its place."
-          variant="warm"
-        />
-
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-7xl mx-auto space-y-16">
-            {/* Inman Park */}
-            <div>
-              <MotionWrapper>
-                <h3 className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] text-dirty-orange uppercase mb-6 neon-glow-orange">
-                  Inman Park
-                </h3>
-              </MotionWrapper>
-              <MobileCarousel>
-                {inmanPark.map((spot, i) => (
-                  <div key={spot.name} className="min-w-[280px] snap-start md:min-w-0">
-                    <PlaceCard {...spot} delay={i * 80} tagVariant="warm" />
-                  </div>
-                ))}
-              </MobileCarousel>
-            </div>
-
-            <QuoteBlock
-              text="so you just gonna bring me a birthday gift on my birthday to my birthday party on my birthday with a birthday gift"
-              attribution="-- vine classic"
-            />
-
-            {/* ===== CAT FILTER PHOTO -- comic break ===== */}
-            <PhotoCard
-              src="/photos/jordan-cat-filter.jpg"
-              alt="Jordan cat filter selfie outdoors"
-              variant="chaos"
-              caption="intermission"
-            />
-
-            {/* Krog Street Market */}
-            <div>
-              <MotionWrapper>
-                <h3 className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] text-dirty-orange uppercase mb-6 neon-glow-orange">
-                  Krog Street Market
-                </h3>
-              </MotionWrapper>
-              <MobileCarousel>
-                {krogStreet.map((spot, i) => (
-                  <div key={spot.name} className="min-w-[280px] snap-start md:min-w-0">
-                    <PlaceCard {...spot} delay={i * 80} tagVariant="warm" />
-                  </div>
-                ))}
-              </MobileCarousel>
-            </div>
-
-            {/* Kirkwood */}
-            <div>
-              <MotionWrapper>
-                <h3 className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] text-dirty-orange uppercase mb-6 neon-glow-orange">
-                  Kirkwood
-                </h3>
-              </MotionWrapper>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {kirkwood.map((spot, i) => (
-                  <PlaceCard key={spot.name} {...spot} delay={i * 80} tagVariant="warm" />
-                ))}
-              </div>
-            </div>
-
-            {/* ===== VERSACE MIRROR FIT ===== */}
-            <PhotoCard
-              src="/photos/versace-mirror-fit.jpg"
-              alt="Versace hotel mirror fit check"
-              variant="inline"
-              caption="fit check before we step out"
-            />
+          {/* Inman Park */}
+          <div>
+            <MotionWrapper>
+              <h3 className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] text-dirty-orange uppercase mb-6 neon-glow-orange">
+                Inman Park
+              </h3>
+            </MotionWrapper>
+            <MobileCarousel>
+              {inmanPark.map((spot, i) => (
+                <div key={spot.name} className="min-w-[280px] snap-start md:min-w-0">
+                  <PlaceCard {...spot} delay={i * 80} tagVariant="warm" />
+                </div>
+              ))}
+            </MobileCarousel>
           </div>
-        </div>
-      </section>
 
-      <SectionDivider />
-
-      {/* ===== DAYTIME ATTRACTIONS ===== */}
-      <section className="bg-sweat grain">
-        <div className="absolute inset-0 bg-gradient-to-b from-dirty-orange/8 to-transparent pointer-events-none" />
-        <ChapterIntro
-          eyebrow="Explore"
-          title="The Bright Hours"
-          intro="before the city shifts, there's this. beltline walks, rooftop views, a bookstore that changes your afternoon plans. the daytime has its own weight here."
-          variant="warm"
-        />
-
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {daytimeSpots.map((spot, i) => (
-              <PlaceCard key={spot.name} {...spot} delay={i * 80} tagVariant="warm" />
-            ))}
+          {/* Krog Street */}
+          <div>
+            <MotionWrapper>
+              <h3 className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] text-dirty-orange uppercase mb-6 neon-glow-orange">
+                Krog Street Market
+              </h3>
+            </MotionWrapper>
+            <MobileCarousel>
+              {krogStreet.map((spot, i) => (
+                <div key={spot.name} className="min-w-[280px] snap-start md:min-w-0">
+                  <PlaceCard {...spot} delay={i * 80} tagVariant="warm" />
+                </div>
+              ))}
+            </MobileCarousel>
           </div>
+
+          {/* Cat filter -- comic break between east side neighborhoods */}
+          <PhotoCard
+            src="/photos/jordan-cat-filter.jpg"
+            alt="Jordan cat filter selfie outdoors"
+            variant="chaos"
+            caption="intermission"
+          />
+
+          {/* Kirkwood */}
+          <div>
+            <MotionWrapper>
+              <h3 className="font-[family-name:var(--font-heading)] text-xs tracking-[0.3em] text-dirty-orange uppercase mb-6 neon-glow-orange">
+                Kirkwood
+              </h3>
+            </MotionWrapper>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {kirkwood.map((spot, i) => (
+                <PlaceCard key={spot.name} {...spot} delay={i * 80} tagVariant="warm" />
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -460,17 +409,46 @@ export default function DayPage() {
 
       <SectionDivider />
 
-      {/* ===== DAYTIME ITINERARY ===== */}
-      <section className="bg-midnight grain">
-        <ChapterIntro
-          eyebrow="The Plan"
-          title="Day by Day"
-          intro="the daytime itinerary. flexible by design, intentional by nature. adjust as needed. atlanta rewards spontaneity."
-          variant="warm"
-        />
+      {/* ===== EXPLORE ===== */}
+      <section className="bg-sweat grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-16">
 
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-5xl mx-auto space-y-16">
+          <ChapterIntro
+            eyebrow="Explore"
+            title="The Bright Hours"
+            intro="before the city shifts, there's this. beltline walks, rooftop views, a bookstore that changes your afternoon plans. the daytime has its own weight here."
+            variant="warm"
+          />
+
+          {/* Mirror fit -- fit check before stepping out */}
+          <PhotoCard
+            src="/photos/versace-mirror-fit.jpg"
+            alt="Versace hotel mirror fit check"
+            variant="inline"
+            caption="fit check before we step out"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {daytimeSpots.map((spot, i) => (
+              <PlaceCard key={spot.name} {...spot} delay={i * 80} tagVariant="warm" />
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* ===== ITINERARY ===== */}
+      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <ChapterIntro
+            eyebrow="The Plan"
+            title="Day by Day"
+            intro="the daytime itinerary. flexible by design, intentional by nature. adjust as needed. atlanta rewards spontaneity."
+            variant="warm"
+          />
+          <div className="max-w-5xl mx-auto mt-16 space-y-16">
             {dayItinerary.map((day, dayIdx) => (
               <MotionWrapper key={day.day}>
                 <div className="border-l-2 border-dirty-orange/20 pl-6 sm:pl-8">
@@ -479,19 +457,16 @@ export default function DayPage() {
                       className={`
                         inline-block px-4 py-1.5
                         font-[family-name:var(--font-display)] text-sm tracking-widest uppercase
-                        bg-dirty-orange text-midnight
-                        -skew-x-3
+                        bg-dirty-orange text-midnight -skew-x-3
                         ${dayIdx % 2 === 0 ? "rotate-chaos-1" : "rotate-chaos-2"}
                       `}
                     >
                       <span className="skew-x-3 inline-block">{day.day}</span>
                     </span>
                   </div>
-
                   <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl text-cream uppercase tracking-wide mb-6 neon-glow-orange">
                     {day.title}
                   </h3>
-
                   <div className="space-y-6">
                     {day.events.map((event) => (
                       <div key={`${day.day}-${event.time}`} className="flex gap-4">
@@ -521,24 +496,20 @@ export default function DayPage() {
         </div>
       </section>
 
-      {/* ===== MEME ===== */}
+      {/* ===== CLOSING ===== */}
       <AmbientMediaLayer gradient="warm">
-        <div className="py-16 sm:py-24 px-6 lg:px-12">
-          <div className="max-w-7xl mx-auto">
-            <QuoteBlock
-              text="understood the assignment"
-              attribution="-- you, after day one"
-            />
-          </div>
+        <div className="py-24 px-6 lg:px-12">
+          <QuoteBlock
+            text="understood the assignment"
+            attribution="-- you, after day one"
+          />
         </div>
       </AmbientMediaLayer>
 
-      {/* ===== CHAPTER NAV ===== */}
       <ChapterNav
         prev={{ href: "/", label: "Home" }}
         next={{ href: "/golden-hour", label: "Golden Hour" }}
       />
-
       <FooterFrame />
     </main>
   );

@@ -10,10 +10,6 @@ import MotionWrapper from "@/components/MotionWrapper";
 import ChapterNav from "@/components/ChapterNav";
 import PhotoCard from "@/components/PhotoCard";
 
-/* =====================================================================
-   DATA
-   ===================================================================== */
-
 const sunsetSpots = [
   {
     name: "Ponce City Market Rooftop",
@@ -108,41 +104,46 @@ const goldenItinerary = [
   },
 ];
 
-/* =====================================================================
-   PAGE
-   ===================================================================== */
-
 export default function GoldenHourPage() {
   return (
     <main>
       <Nav />
       <FloatingCTA />
 
-      {/* ===== CHAPTER INTRO ===== */}
+      {/* ===== HERO ===== */}
       <AmbientMediaLayer gradient="warm">
-        <div className="pt-24 sm:pt-32">
+        <div className="pt-28 sm:pt-32 pb-0">
           <ChapterIntro
             eyebrow="Chapter Two"
             title="Golden Hour"
             intro="the city shifts around 5. the light gets long and warm. the pace drops half a gear. you're between things -- between day and night, between plans, between versions of yourself. this is the in-between and it's the best part."
             variant="warm"
           />
+          {/* MS Paint -- dreamy nostalgia shot for the in-between hour */}
+          <div className="px-6 lg:px-12 pb-12">
+            <div className="max-w-7xl mx-auto">
+              <PhotoCard
+                src="/photos/jordan-mspaint.jpg"
+                alt="Jordan in MS Paint window edit"
+                variant="chaos"
+                caption="nostalgia buffer loading..."
+                priority
+              />
+            </div>
+          </div>
         </div>
       </AmbientMediaLayer>
 
-      <SectionDivider />
-
       {/* ===== THE SHIFT ===== */}
-      <section className="bg-midnight grain">
-        <ChapterIntro
-          eyebrow="The Shift"
-          title="When the Light Changes"
-          intro="atlanta at golden hour is a different city. the concrete goes warm. the trees cast long shadows on the beltline. every patio becomes the right patio."
-          variant="warm"
-        />
-
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <ChapterIntro
+            eyebrow="The Shift"
+            title="When the Light Changes"
+            intro="atlanta at golden hour is a different city. the concrete goes warm. the trees cast long shadows on the beltline. every patio becomes the right patio."
+            variant="warm"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {sunsetSpots.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} delay={i * 100} tagVariant="warm" />
             ))}
@@ -150,20 +151,8 @@ export default function GoldenHourPage() {
         </div>
       </section>
 
-      {/* ===== MS PAINT PHOTO ===== */}
-      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
-        <div className="max-w-7xl mx-auto">
-          <PhotoCard
-            src="/photos/jordan-mspaint.jpg"
-            alt="Jordan in MS Paint window edit"
-            variant="inline"
-            caption="nostalgia buffer loading..."
-          />
-        </div>
-      </section>
-
       <AmbientMediaLayer gradient="warm">
-        <div className="py-16 sm:py-24 px-6 lg:px-12">
+        <div className="py-20 px-6 lg:px-12">
           <QuoteBlock
             text="you're driving through midtown and the light hits the glass buildings and for a second the whole city looks like it was designed for exactly this moment"
           />
@@ -172,39 +161,31 @@ export default function GoldenHourPage() {
 
       <SectionDivider />
 
-      {/* ===== TRANSITION SPOTS ===== */}
-      <section className="bg-sweat grain">
-        <ChapterIntro
-          eyebrow="The Bridge"
-          title="Between Day & Night"
-          intro="these are the spots where afternoon becomes evening. you came in daylight. you'll leave in dark. that's the whole trick."
-          variant="warm"
-        />
+      {/* ===== BRIDGE ===== */}
+      <section className="bg-sweat grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <ChapterIntro
+            eyebrow="The Bridge"
+            title="Between Day & Night"
+            intro="these are the spots where afternoon becomes evening. you came in daylight. you'll leave in dark. that's the whole trick."
+            variant="warm"
+          />
 
-        {/* ===== VERSACE SUNGLASSES PHOTO ===== */}
-        <div className="px-6 lg:px-12 xl:px-16 relative z-10">
-          <div className="max-w-7xl mx-auto">
-            <PhotoCard
-              src="/photos/versace-sunglasses.jpg"
-              alt="Versace with blue mirror shades at golden hour"
-              variant="float"
-              caption="golden hour approved"
-            />
-          </div>
-        </div>
+          {/* Sunglasses -- golden hour approved, right before the bar spots */}
+          <PhotoCard
+            src="/photos/versace-sunglasses.jpg"
+            alt="Versace with blue mirror shades at golden hour"
+            variant="inline"
+            caption="golden hour approved"
+          />
 
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {transitionSpots.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} delay={i * 100} tagVariant="warm" />
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ===== VERSACE BATHROOM FIT ===== */}
-      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
-        <div className="max-w-7xl mx-auto">
+          {/* Bathroom fit -- post-bar, getting ready for night */}
           <PhotoCard
             src="/photos/versace-bathroom-fit.jpg"
             alt="Versace bathroom fit -- mirror selfie"
@@ -214,25 +195,18 @@ export default function GoldenHourPage() {
         </div>
       </section>
 
-      {/* Casey Frey energy reference */}
-      <QuoteBlock
-        text="the energy is shifting. casey frey running through the parking lot type energy. controlled chaos. beautiful nonsense."
-        attribution="-- the golden hour mood"
-      />
-
       <SectionDivider />
 
-      {/* ===== GOLDEN HOUR TIMELINE ===== */}
-      <section className="bg-midnight grain">
-        <ChapterIntro
-          eyebrow="The Flow"
-          title="How the Evening Builds"
-          intro="golden hour has a rhythm. you don't force it. you let it carry you from rooftop to beltline to patio to dinner. the city does the work."
-          variant="warm"
-        />
-
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-4xl mx-auto">
+      {/* ===== TIMELINE ===== */}
+      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <ChapterIntro
+            eyebrow="The Flow"
+            title="How the Evening Builds"
+            intro="golden hour has a rhythm. you don't force it. you let it carry you from rooftop to beltline to patio to dinner. the city does the work."
+            variant="warm"
+          />
+          <div className="max-w-4xl mx-auto mt-16">
             {goldenItinerary.map((event, i) => (
               <MotionWrapper key={event.time} delay={i * 80}>
                 <div className="flex gap-4 mb-8 last:mb-0">
@@ -270,12 +244,10 @@ export default function GoldenHourPage() {
         </div>
       </AmbientMediaLayer>
 
-      {/* ===== CHAPTER NAV ===== */}
       <ChapterNav
         prev={{ href: "/day", label: "Day" }}
         next={{ href: "/nightlife", label: "Nightlife" }}
       />
-
       <FooterFrame />
     </main>
   );

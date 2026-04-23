@@ -96,14 +96,6 @@ body {
   50% { transform: translateY(-8px); }
 }
 
-.float-animation-delay-1 {
-  animation: float 3s ease-in-out infinite 0.5s;
-}
-
-.float-animation-delay-2 {
-  animation: float 3s ease-in-out infinite 1s;
-}
-
 /* ====== MOTION WRAPPER ====== */
 .motion-hidden {
   opacity: 0;
@@ -153,16 +145,6 @@ body {
 .glow-border-orange:hover {
   border-color: rgba(255, 107, 53, 0.6);
   box-shadow: 0 0 12px rgba(255, 107, 53, 0.3), 0 0 40px rgba(255, 107, 53, 0.15);
-}
-
-/* ====== SCROLL INDICATOR ====== */
-@keyframes bounce-down {
-  0%, 100% { transform: translateY(0); opacity: 0.6; }
-  50% { transform: translateY(6px); opacity: 1; }
-}
-
-.scroll-indicator {
-  animation: bounce-down 2s ease-in-out infinite;
 }
 
 /* ====== CHAOTIC ROTATION UTILS ====== */

@@ -10,10 +10,6 @@ import MotionWrapper from "@/components/MotionWrapper";
 import ChapterNav from "@/components/ChapterNav";
 import PhotoCard from "@/components/PhotoCard";
 
-/* =====================================================================
-   DATA
-   ===================================================================== */
-
 const lateNightFood = [
   {
     name: "Waffle House",
@@ -115,24 +111,33 @@ const saturdayWindDown = [
   },
 ];
 
-/* =====================================================================
-   PAGE
-   ===================================================================== */
-
 export default function AfterHoursPage() {
   return (
     <main>
       <Nav />
       <FloatingCTA />
 
-      {/* ===== CHAPTER INTRO ===== */}
+      {/* ===== HERO ===== */}
       <AmbientMediaLayer gradient="purple">
-        <div className="pt-24 sm:pt-32">
+        <div className="pt-28 sm:pt-32 pb-0">
           <ChapterIntro
             eyebrow="Chapter Four"
             title="After Hours"
             intro="the truth shows up after midnight. the city strips down to what it actually is. the neon is still on but the performance is over. what's left is the real thing -- messy, honest, funny, exhausted, and still somehow going."
           />
+          {/* Ed Boy meme -- after-hours energy */}
+          <div className="px-6 lg:px-12 pb-12">
+            <div className="max-w-7xl mx-auto">
+              <PhotoCard
+                src="/photos/jordan-edboy.jpg"
+                alt="Jordan as Ed Edd n Eddy -- ed boy energy"
+                variant="meme"
+                landscape
+                caption="that's my horse"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </AmbientMediaLayer>
 
@@ -143,54 +148,41 @@ export default function AfterHoursPage() {
 
       <SectionDivider />
 
-      {/* ===== LATE NIGHT FOOD ===== */}
-      <section className="bg-midnight grain-heavy">
-        <div className="absolute inset-0 bg-gradient-to-b from-club-purple/8 via-neon-pink/5 to-transparent pointer-events-none" />
-        <ChapterIntro
-          eyebrow="3AM Menu"
-          title="Feed the Chaos"
-          intro="the restaurants closed hours ago. the real food map opens now. waffle house. wings. somebody's trunk. this is where the stories come from."
-        />
-
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* ===== FEED THE CHAOS ===== */}
+      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <ChapterIntro
+            eyebrow="3AM Menu"
+            title="Feed the Chaos"
+            intro="the restaurants closed hours ago. the real food map opens now. waffle house. wings. somebody's trunk. this is where the stories come from."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {lateNightFood.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} glow delay={i * 100} tagVariant="glow" />
             ))}
           </div>
-        </div>
-      </section>
 
-      <QuoteBlock
-        text="two bros chillin in a hot tub, five feet apart cause they're not gay"
-        attribution="-- vine, eternal"
-      />
-
-      {/* ===== ED BOY MEME BREAK ===== */}
-      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
-        <div className="max-w-7xl mx-auto">
+          {/* Boot photo -- pimp down comedy moment */}
           <PhotoCard
-            src="/photos/jordan-edboy.jpg"
-            alt="Jordan as Ed Edd n Eddy -- ed boy energy"
-            variant="meme"
-            landscape
-            caption="that's my horse"
+            src="/photos/versace-boot.jpg"
+            alt="Versace leg in medical boot -- pimp down moment"
+            variant="chaos"
+            overlay="Pimp down! Pimp down...."
+            caption="the after hours don't always go as planned"
           />
         </div>
       </section>
 
       <SectionDivider />
 
-      {/* ===== THE CHAOS TIMELINE ===== */}
-      <section className="bg-sweat grain-heavy">
-        <div className="absolute inset-0 bg-gradient-to-b from-club-purple/10 to-transparent pointer-events-none" />
-        <ChapterIntro
-          eyebrow="The Real Schedule"
-          title="How the Night Actually Goes"
-          intro="nobody follows the itinerary after midnight. here's what actually happens."
-        />
-
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+      {/* ===== CHAOS TIMELINE ===== */}
+      <section className="bg-sweat grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <ChapterIntro
+            eyebrow="The Real Schedule"
+            title="How the Night Actually Goes"
+            intro="nobody follows the itinerary after midnight. here's what actually happens."
+          />
           <div className="max-w-4xl mx-auto">
             {chaosTimeline.map((event, i) => (
               <MotionWrapper key={event.time} delay={i * 80}>
@@ -213,19 +205,6 @@ export default function AfterHoursPage() {
         </div>
       </section>
 
-      {/* ===== VERSACE BOOT -- comedy moment ===== */}
-      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
-        <div className="max-w-7xl mx-auto">
-          <PhotoCard
-            src="/photos/versace-boot.jpg"
-            alt="Versace leg in medical boot -- pimp down moment"
-            variant="chaos"
-            overlay="Pimp down! Pimp down...."
-            caption="the after hours don't always go as planned"
-          />
-        </div>
-      </section>
-
       {/* ===== THIS IS FINE INTERLUDE ===== */}
       <AmbientMediaLayer gradient="purple">
         <div className="py-16 sm:py-24 px-6 lg:px-12">
@@ -243,17 +222,14 @@ export default function AfterHoursPage() {
         </div>
       </AmbientMediaLayer>
 
-      <SectionDivider />
-
-      {/* ===== SATURDAY WIND-DOWN ===== */}
-      <section className="bg-midnight grain">
-        <ChapterIntro
-          eyebrow="The Last Day"
-          title="Victory Lap"
-          intro="saturday. you made it. everything hurts but nothing is broken. time to eat brunch like you earned it, because you did."
-        />
-
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+      {/* ===== VICTORY LAP ===== */}
+      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <ChapterIntro
+            eyebrow="The Last Day"
+            title="Victory Lap"
+            intro="saturday. you made it. everything hurts but nothing is broken. time to eat brunch like you earned it, because you did."
+          />
           <div className="max-w-4xl mx-auto">
             {saturdayWindDown.map((event, i) => (
               <MotionWrapper key={event.time} delay={i * 80}>
@@ -292,12 +268,10 @@ export default function AfterHoursPage() {
         </div>
       </AmbientMediaLayer>
 
-      {/* ===== CHAPTER NAV ===== */}
       <ChapterNav
         prev={{ href: "/nightlife", label: "Nightlife" }}
-        next={{ href: "/", label: "Home" }}
+        next={{ href: "/day", label: "Day" }}
       />
-
       <FooterFrame />
     </main>
   );

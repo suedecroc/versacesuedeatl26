@@ -12,10 +12,6 @@ import StickerButton from "@/components/StickerButton";
 import ChapterNav from "@/components/ChapterNav";
 import PhotoCard from "@/components/PhotoCard";
 
-/* =====================================================================
-   DATA
-   ===================================================================== */
-
 const edgewoodSpots = [
   {
     name: "Sister Louisa's Church",
@@ -213,39 +209,34 @@ const nightItinerary = [
   },
 ];
 
-/* =====================================================================
-   PAGE
-   ===================================================================== */
-
 export default function NightlifePage() {
   return (
     <main>
       <Nav />
       <FloatingCTA />
 
-      {/* ===== CHAPTER INTRO ===== */}
+      {/* ===== HERO ===== */}
       <AmbientMediaLayer gradient="pink">
-        <div className="pt-24 sm:pt-32">
+        <div className="pt-28 sm:pt-32 pb-0">
           <ChapterIntro
             eyebrow="Chapter Three"
             title="Nightlife"
             intro="the neon comes on and the city changes its mind about everything. edgewood avenue is a decision tree with no wrong answers. buckhead is where the volume goes up. magic city doesn't need your introduction."
           />
+          {/* Tailgate -- pre-game activated */}
+          <div className="px-6 lg:px-12 pb-12">
+            <div className="max-w-7xl mx-auto">
+              <PhotoCard
+                src="/photos/versace-tailgate.jpg"
+                alt="Versace squatting at the tailgate -- pre-game energy"
+                variant="inline"
+                caption="pre-game. activated."
+                priority
+              />
+            </div>
+          </div>
         </div>
       </AmbientMediaLayer>
-
-      {/* ===== VERSACE TAILGATE -- pre-game energy ===== */}
-      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
-        <div className="max-w-7xl mx-auto">
-          <PhotoCard
-            src="/photos/versace-tailgate.jpg"
-            alt="Versace squatting at the tailgate -- pre-game energy"
-            variant="inline"
-            caption="pre-game. activated."
-            priority
-          />
-        </div>
-      </section>
 
       <QuoteBlock
         text="he's a 10 but he's at magic city on a tuesday"
@@ -255,76 +246,64 @@ export default function NightlifePage() {
       <SectionDivider />
 
       {/* ===== EDGEWOOD STRIP ===== */}
-      <section className="bg-midnight grain-heavy">
-        <div className="absolute inset-0 bg-gradient-to-b from-neon-pink/5 via-club-purple/5 to-transparent pointer-events-none" />
-        <ChapterIntro
-          eyebrow="The Strip"
-          title="Edgewood Avenue"
-          intro="atlanta's bar district. every door a different universe. start anywhere, end up everywhere. the strip doesn't judge."
-        />
-
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-7xl mx-auto">
-            <MobileCarousel>
-              {edgewoodSpots.map((spot, i) => (
-                <div key={spot.name} className="min-w-[280px] snap-start md:min-w-0">
-                  <PlaceCard {...spot} glow delay={i * 80} tagVariant="glow" />
-                </div>
-              ))}
-            </MobileCarousel>
-          </div>
+      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <ChapterIntro
+            eyebrow="The Strip"
+            title="Edgewood Avenue"
+            intro="atlanta's bar district. every door a different universe. start anywhere, end up everywhere. the strip doesn't judge."
+          />
+          <MobileCarousel>
+            {edgewoodSpots.map((spot, i) => (
+              <div key={spot.name} className="min-w-[280px] snap-start md:min-w-0">
+                <PlaceCard {...spot} glow delay={i * 80} tagVariant="glow" />
+              </div>
+            ))}
+          </MobileCarousel>
         </div>
       </section>
 
       <SectionDivider />
 
       {/* ===== THE BIG ROOMS ===== */}
-      <section className="bg-sweat grain-heavy">
-        <div className="absolute inset-0 bg-gradient-to-b from-neon-pink/8 to-transparent pointer-events-none" />
-        <ChapterIntro
-          eyebrow="Main Event"
-          title="The Big Rooms"
-          intro="magic city is the non-negotiable. the rest depends on what kind of night you're building. buckhead goes loud. midtown goes louder. you already know which one you're choosing."
-        />
-
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="bg-sweat grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <ChapterIntro
+            eyebrow="Main Event"
+            title="The Big Rooms"
+            intro="magic city is the non-negotiable. the rest depends on what kind of night you're building. buckhead goes loud. midtown goes louder. you already know which one you're choosing."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {bigNightSpots.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} glow delay={i * 100} tagVariant="glow" />
             ))}
           </div>
 
+          {/* Neon sign -- after the big rooms */}
+          <PhotoCard
+            src="/photos/versace-neon-sign.jpg"
+            alt="Versace next to BABE YOU LOOK SO COOL neon sign"
+            variant="inline"
+            caption="babe you look so cool"
+          />
+
           <MotionWrapper delay={400}>
-            <div className="mt-12 flex justify-center">
+            <div className="flex justify-center">
               <StickerButton label="Find Your Trouble" href="#night-plan" color="purple" />
             </div>
           </MotionWrapper>
         </div>
       </section>
 
-      {/* ===== VERSACE NEON SIGN PHOTO ===== */}
-      <section className="bg-midnight grain px-6 lg:px-12 xl:px-16 py-8">
-        <div className="max-w-7xl mx-auto">
-          <PhotoCard
-            src="/photos/versace-neon-sign.jpg"
-            alt="Versace next to BABE YOU LOOK SO COOL neon sign"
-            variant="inline"
-            className="glow-border"
-            caption="babe you look so cool"
-          />
-        </div>
-      </section>
-
       {/* ===== LATE DINNER ===== */}
-      <section className="bg-midnight grain">
-        <ChapterIntro
-          eyebrow="Fuel"
-          title="Late Dinner"
-          intro="you're going to need food. before, during, or after. these spots know what time it is."
-        />
-
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section className="bg-midnight grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <ChapterIntro
+            eyebrow="Fuel"
+            title="Late Dinner"
+            intro="you're going to need food. before, during, or after. these spots know what time it is."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {lateDinnerSpots.map((spot, i) => (
               <PlaceCard key={spot.name} {...spot} delay={i * 80} tagVariant="glow" />
             ))}
@@ -337,17 +316,14 @@ export default function NightlifePage() {
         attribution="-- edgewood avenue, every night"
       />
 
-      <SectionDivider />
-
-      {/* ===== NIGHT ITINERARY ===== */}
-      <section id="night-plan" className="bg-midnight grain-heavy">
-        <ChapterIntro
-          eyebrow="The Plan"
-          title="Night by Night"
-          intro="the after-dark itinerary. each night has its own energy. tuesday warms you up. wednesday is magic city. thursday goes deep east side. friday is the crescendo."
-        />
-
-        <div className="px-6 lg:px-12 xl:px-16 pb-16 sm:pb-24 relative z-10">
+      {/* ===== NIGHT BY NIGHT ===== */}
+      <section id="night-plan" className="bg-midnight grain py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <ChapterIntro
+            eyebrow="The Plan"
+            title="Night by Night"
+            intro="the after-dark itinerary. each night has its own energy. tuesday warms you up. wednesday is magic city. thursday goes deep east side. friday is the crescendo."
+          />
           <div className="max-w-5xl mx-auto space-y-16">
             {nightItinerary.map((day, dayIdx) => (
               <MotionWrapper key={day.day}>
@@ -365,11 +341,9 @@ export default function NightlifePage() {
                       <span className="skew-x-3 inline-block">{day.day}</span>
                     </span>
                   </div>
-
                   <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl text-cream uppercase tracking-wide mb-6 neon-glow-pink">
                     {day.title}
                   </h3>
-
                   <div className="space-y-6">
                     {day.events.map((event) => (
                       <div key={`${day.day}-${event.time}`} className="flex gap-4">
@@ -399,7 +373,7 @@ export default function NightlifePage() {
         </div>
       </section>
 
-      {/* ===== OUTRO QUOTE ===== */}
+      {/* ===== OUTRO ===== */}
       <AmbientMediaLayer gradient="pink">
         <div className="py-20 sm:py-28 px-6 lg:px-12">
           <QuoteBlock
@@ -408,12 +382,10 @@ export default function NightlifePage() {
         </div>
       </AmbientMediaLayer>
 
-      {/* ===== CHAPTER NAV ===== */}
       <ChapterNav
         prev={{ href: "/golden-hour", label: "Golden Hour" }}
         next={{ href: "/after-hours", label: "After Hours" }}
       />
-
       <FooterFrame />
     </main>
   );
